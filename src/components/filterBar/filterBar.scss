@@ -1,0 +1,16 @@
+.filterBar {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.kinds {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top: 1px solid #E7E7EC;
+  padding: 15px 0;
+}
+.kinds  div {
+  display: flex;
+  gap: 15px;
+}

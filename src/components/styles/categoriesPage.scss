@@ -1,0 +1,28 @@
+.filterWrapper {
+  display: flex;
+  gap: 40px;
+}
+.viewTools {
+  width: 928px;
+  margin: 0 auto;
+  }
+.cardInfo {
+  display: flex;
+  width: 70%;
+  padding: 17px 1px;
+  align-items: center;
+  gap: 44px;
+  border-bottom: 1px solid #E7E7EC;
+}
+.imgCarad img {
+  width: 56px;
+  height: 56px;
+}
+.titleCard  h3{
+  color: #001427;
+
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+}
