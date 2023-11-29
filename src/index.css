@@ -44,6 +44,10 @@ input:focus {
   outline: unset;
 }
 
+ul li {
+  list-style-type: none;
+}
+
 .container {
   width: 1240px;
   margin: 0 auto;
@@ -73,3 +77,22 @@ input:focus {
   height: 18px;
   background-image: url("./components/assets/search.svg");
 }
+
+.carts-icon {
+  width: 30px;
+  height: 30px;
+  background-image: url("./components/assets/cart1.svg");
+}
+
+.d-block {
+  transform: scaleY(1);
+  transform-origin: top ;
+  /*display: block!important;*/
+}
+
+.d-none {
+  transform: scaleY(0);
+  transform-origin: top ;
+  /*display: none!important;*/
+}
+

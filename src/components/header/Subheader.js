@@ -1,14 +1,32 @@
 import React, {useState} from 'react';
 import '../styles/subheader.scss'
+import categories from "../categories/categories";
 const Subheader = () => {
   const [isOpenCatalog, setIsOpenCatalog] = useState(false)
   const handleClickCatalog = () => {
     setIsOpenCatalog(!isOpenCatalog)
   }
 
+  console.log(categories.category)
+
   return (
     <header className={'subheader'}>
       <div className="container subheader-wrap">
+        <div className={`catalog ${isOpenCatalog ? 'd-block' : 'd-none'}`}>
+          <div className={'left-box'}>
+            <ul>
+              {categories.category.map(el => {
+                return (
+                  <li className={'elemCategory'}>{el.category}</li>
+                )
+              })}
+            </ul>
+
+          </div>
+          <div className={'right-box'}>
+
+          </div>
+        </div>
         <i className={'icon logo'}></i>
         <div className={'subheader-catalog'}>
           <div className="catalog-wrap">
@@ -35,6 +53,10 @@ const Subheader = () => {
             </form>
           </div>
         </div>
+        <a href={'#'} className={'carts'}>
+          Корзинка
+          <i className={'icon carts-icon'}></i>
+        </a>
       </div>
     </header>
   );
