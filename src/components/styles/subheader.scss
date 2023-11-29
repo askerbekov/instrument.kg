@@ -1,0 +1,58 @@
+.subheader {
+  padding: 10px 0;
+
+  & .subheader-wrap {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    & .logo {
+      width: 190px;
+      height: 40px;
+      background-image: url("../assets/logo.svg");
+      color: red;
+    }
+
+    & .subheader-catalog {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      & .catalog-wrap {
+        & .catalog-btn {
+          font-size: 20px;
+          border-radius: 5px;
+          color: white;
+          font-weight: 500;
+          background-color: red;
+          padding: 5px 10px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          max-height: 34px;
+          height: 100%;
+          & .burger {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            border-radius: 2px;
+          }
+        }
+      }
+      & .search {
+        & .search-form {
+          display: flex;
+          align-items: center;
+          border-radius: 5px;
+          border: 1px solid gray;
+          padding: 5px;
+          min-height: 34px;
+          & .search-input {
+            width: 650px;
+            height: 100%;
+            color: #001427;
+          }
+        }
+
+      }
+    }
+  }
+}

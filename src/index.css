@@ -25,7 +25,51 @@ a {
   color: inherit;
 }
 
+button {
+  border: unset;
+  background-color: unset;
+  color: unset;
+  padding: unset;
+  cursor: pointer;
+}
+input {
+  border: unset;
+  background-color: unset;
+  color: unset;
+  padding: unset;
+  cursor: unset;
+  font-size: unset;
+}
+input:focus {
+  outline: unset;
+}
+
 .container {
   width: 1240px;
   margin: 0 auto;
+}
+
+.icon {
+  display: block;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.burger-icon {
+  width: 18px;
+  height: 2px;
+  background-color: white;
+}
+
+.close-icon {
+  width: 18px;
+  height: 18px;
+  background-image: url("./components/assets/close.svg");
+}
+
+.search-icon {
+  width: 18px;
+  height: 18px;
+  background-image: url("./components/assets/search.svg");
 }

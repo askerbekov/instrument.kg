@@ -5,7 +5,6 @@ import CategoriesPage from "./CategoriesPage";
 const HomePage = () => {
   return (
     <Layout>
-      <CategoriesPage/>
     </Layout>
   );
 };

@@ -1,5 +1,34 @@
-header {
-  a {
+.header {
+  background-color: #F3F5F6;
+  padding: 20px 0;
 
+  & a {
+    color: #001427;
+    transition: .2s;
+  }
+  & a:hover {
+    color: red;
+  }
+  & .header__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    & .header__navigation {
+      display: flex;
+      gap: 20px;
+    }
+
+    & .header__address {
+      & .link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    & .header__phone {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }
