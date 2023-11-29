@@ -1,0 +1,49 @@
+.footer {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+}
+.contactBar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  width: 800px;
+  background: #4D5B68;
+  color: #FFF;
+  padding: 60px;
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.footWrapper  {
+  display: flex;
+  gap: 70px;
+  color: #4D5B68;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+}
+.footerMenu {
+display: flex;
+  flex-direction: column;
+  gap: 50px;
+  background: #F3F5F6;
+  padding: 65px;
+}
+.footInfo {
+  color: #4D5B68;
+
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+}
+.footLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
