@@ -83,6 +83,11 @@ ul li {
   height: 30px;
   background-image: url("./components/assets/cart1.svg");
 }
+.footer-icon {
+  width: 200px;
+  height: 40px;
+  background-image: url("./components/assets/mir-icon.svg");
+}
 
 .d-block {
   transform: scaleY(1);
