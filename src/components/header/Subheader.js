@@ -1,13 +1,21 @@
 import React, {useState} from 'react';
 import '../styles/subheader.scss'
 import categories from "../categories/categories";
+import AsideCatalog from "./AsideCatalog";
+import Search from "../search/Search";
 const Subheader = () => {
   const [isOpenCatalog, setIsOpenCatalog] = useState(false)
+  const [podcatalog, setPodcatalog] = useState([])
   const handleClickCatalog = () => {
     setIsOpenCatalog(!isOpenCatalog)
   }
 
-  console.log(categories.category)
+  const handleHoverCatalog = (el) => {
+    console.log(podcatalog)
+    setPodcatalog(el)
+  }
+
+  // console.log(categories.category)
 
   return (
     <header className={'subheader'}>
@@ -16,15 +24,29 @@ const Subheader = () => {
           <div className={'left-box'}>
             <ul>
               {categories.category.map(el => {
-                return (
-                  <li className={'elemCategory'}>{el.category}</li>
-                )
+                return(
+                  <AsideCatalog key={el.id} podcatalog={podcatalog} handleHoverCatalog={handleHoverCatalog} el={el}/>
+                  )
               })}
             </ul>
-
           </div>
           <div className={'right-box'}>
-
+            <ul className={'podcat'}>
+              {podcatalog &&
+                podcatalog?.podcategoriy?.map((podcat, i) => {
+                  return (
+                    <a href={'#'}>
+                      <li
+                        className={'list-podcat'}
+                        key={i}
+                      >
+                        {podcat}
+                      </li>
+                    </a>
+                    )
+                })
+              }
+            </ul>
           </div>
         </div>
         <i className={'icon logo'}></i>
@@ -46,12 +68,7 @@ const Subheader = () => {
               Каталог
             </button>
           </div>
-          <div className={'search'}>
-            <form action="" className={'search-form'}>
-              <input type="text" className={'search-input'} placeholder={'Искать товары ...'}/>
-              <i className={'icon search-icon'}></i>
-            </form>
-          </div>
+          <Search/>
         </div>
         <a href={'#'} className={'carts'}>
           Корзинка

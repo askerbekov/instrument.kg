@@ -5,7 +5,11 @@ import CategoriesPage from "./CategoriesPage";
 const HomePage = () => {
   return (
     <Layout>
-
+      <div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </Layout>
   );
 };
