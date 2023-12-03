@@ -23,7 +23,7 @@ for (let i = 0; i < cat.length; i++) {
   categories.category = [...categories.category, {id: i, category: cat[i], podcategoriy: [...podcat[i]]}]
 }
 
-console.log(categories.category[0])
+// console.log(categories.category[0])
 
 
 export default categories
