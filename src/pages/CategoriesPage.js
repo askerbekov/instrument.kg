@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import '../components/styles/categoriesPage.scss'
 import FilterBar from "../components/filterBar/FilterBar";
+import Layout from "../components/layout/Layout";
 
 
 
@@ -14,7 +15,7 @@ const CategoriesPage = () => {
             .catch(err => console.log(err))
     },[])
     return (
-    <>
+    <Layout>
     <div className="container filterWrapper ">
         <FilterBar/>
         <div className="viewTools">
@@ -37,7 +38,7 @@ const CategoriesPage = () => {
             }
         </div>
     </div>
-    </>
+    </Layout>
 
     );
 };
