@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {memo} from 'react';
 
-const Search = () => {
+const Search = memo(() => {
   return (
     <div className={'search'}>
       <form action="" className={'search-form'}>
@@ -9,6 +9,6 @@ const Search = () => {
       </form>
     </div>
   );
-};
+});
 
 export default Search;

@@ -3,7 +3,7 @@ import './filterBar.scss'
 
 const FilterBar = () => {
     return (
-        <div className={'filterBar'}>
+        <aside className={'filterBar'}>
             <h3>Наборы инструмента бытового</h3>
             <div className={'kinds'}>
                 <h4>Группа товаров</h4>
@@ -35,7 +35,7 @@ const FilterBar = () => {
                     <label htmlFor="">Ручной инструмент</label>
                 </div>
             </div>
-        </div>
+        </aside>
     );
 };
 
