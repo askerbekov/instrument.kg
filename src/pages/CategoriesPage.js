@@ -3,11 +3,13 @@ import axios from "axios";
 import '../components/styles/categoriesPage.scss'
 import FilterBar from "../components/filterBar/FilterBar";
 import Layout from "../components/layout/Layout";
-
-
+import {useParams} from "react-router-dom";
+import categories from "../components/categories/categories";
 
 const CategoriesPage = () => {
     const [category, setCategory] = useState()
+    const idCategory = useParams()
+    console.log(categories.category[idCategory.categoriesId])
 
     useEffect( () => {
         axios.get('https://64e2f01ebac46e480e77eeff.mockapi.io/api/lvl1/users')
@@ -17,6 +19,7 @@ const CategoriesPage = () => {
     return (
     <Layout>
     <div className="container filterWrapper ">
+
         <FilterBar/>
         <div className="viewTools">
             {

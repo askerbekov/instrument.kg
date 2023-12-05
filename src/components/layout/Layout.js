@@ -7,7 +7,6 @@ const Layout = ({children}) => {
   return (
     <>
       <Header/>
-      <Subheader/>
       <main>
         {children}
       </main>
