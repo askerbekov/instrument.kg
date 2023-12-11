@@ -122,3 +122,10 @@ ul li {
 .bg-b {
   background-color: gold;
 }
+
+
+.arrow {
+  background-image: url("./components/assets/arrow.png");
+  width: 11px;
+  height: 7px;
+}

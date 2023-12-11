@@ -1,17 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './filterBar.scss'
+import DropDown from "./dropMenus/DropDown";
 
 const FilterBar = () => {
+
     return (
         <aside className={'filterBar'}>
             <h3>Наборы инструмента бытового</h3>
-            <div className={'kinds'}>
-                <h4>Группа товаров</h4>
-                <div>
-                    <input type="checkbox"/>
-                    <label htmlFor="">Ручной инструмент</label>
-                </div>
-            </div>
+           <DropDown/>
             <div className={'kinds'}>
                 <h4>Бренд</h4>
                <div>
