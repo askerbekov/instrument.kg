@@ -3,8 +3,12 @@ import categories from "../categories/categories";
 import AsideCatalog from "../header/AsideCatalog";
 import '../styles/catalog.scss'
 import {Link} from "react-router-dom";
+import {useDispatch} from "react-redux";
+import {SET_CATEGORY, SET_PODCATEGORY} from "../../redux/types/types";
 
 const Catalog = memo(({isOpenCatalog, setOpenCatalog}) => {
+  const dispatch = useDispatch()
+
   const [podcatalog, setPodcatalog] = useState(categories.category[0])
 
   const handleHoverCatalog = (el) => {
@@ -35,7 +39,11 @@ const Catalog = memo(({isOpenCatalog, setOpenCatalog}) => {
                 return (
                   <Link
                     key={i}
-                    onClick={event => setOpenCatalog(false)}
+                    onClick={event => {
+                      dispatch({type:SET_CATEGORY, payload: podcatalog})
+                      dispatch({type: SET_PODCATEGORY, payload: {id: i, podcategory: podcat}})
+                      setOpenCatalog(false)
+                    }}
                     to={`/categories/${podcatalog.id}/podcatalog/${i}`}
                   >
                     <li
