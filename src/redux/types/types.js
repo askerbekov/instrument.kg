@@ -1,1 +1,2 @@
-export const GET_USERS = 'GET_USERS'
+export const SET_CATEGORY = 'SET_CATEGORY'
+export const SET_PODCATEGORY = 'SET_PODCATEGORY'

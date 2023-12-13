@@ -5,19 +5,23 @@ const ChekBackEnd = () => {
   const [ph, setPh] = useState([]);
 
   const myFunc = async () => {
-    const photoForm = document.querySelector('#myForm');
+    const photoForm = document.querySelector('#photos');
+    const photo = []
     const formData = new FormData();
 
 
-
-    console.log(typeof photoForm.files)
-    const photos = []
+    // console.log(photoForm.files)
+    // console.log(typeof photoForm.files)
+    // const photos = []
     for (let elem of photoForm.files){
-      photos.push(elem)
+      photo.push(elem)
     }
-    console.log(photos)
+    console.log(photo)
+
+    formData.append('photo', photo)
+    // console.log(photos)
     // Добавляем все файлы в массив
-    formData.append('photos', photos);
+    // formData.append('photo', photoForm.files);
 
     // Добавляем другие данные к форме
     formData.append("name", "vilka");
@@ -28,7 +32,6 @@ const ChekBackEnd = () => {
     formData.append("category", 1);
     formData.append("subcategory", 1);
     formData.append("brand", 1);
-
 
     try {
       // Отправляем запрос с использованием axios
