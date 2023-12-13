@@ -4,17 +4,19 @@ import thunk from "redux-thunk";
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 import categoriesReducer from "./reducer/categoriesReducer";
+import promoProductReducer from "./reducer/promoProductReducer";
 
 
 
 const rootReducer = combineReducers({
   categoriesReducer: categoriesReducer,
+  promoProductReducer: promoProductReducer,
 });
 
 const persistConfig = {
   key: 'root',
   storage,
-  // whitelist: ['discoverReducer'],
+  whitelist: ['categoriesReducer'],
   // blacklist: ['resultDiscoverReducer']
 }
 
