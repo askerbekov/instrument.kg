@@ -2,6 +2,35 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
+
+  & .drop-down {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & .arrow-down {
+      transition: .5s;
+      transform: rotate(180deg);
+    }
+    .arrow {
+      transition: .5s;
+
+    }
+  }
+  &  section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    & .drop-info  label{
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    & .drop-none{
+      display: none;
+    }
+  }
+
 }
 .kinds {
   display: flex;
@@ -13,4 +42,5 @@
 .kinds  div {
   display: flex;
   gap: 15px;
-}
+}/////////////////////
+
