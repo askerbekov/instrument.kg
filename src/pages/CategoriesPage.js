@@ -12,7 +12,7 @@ const CategoriesPage = () => {
     return (
     <Layout>
         <section className={'section-products'}>
-            <div className="container">
+            <div className="container product-tools">
                 <FilterBar/>
                 <Products/>
             </div>

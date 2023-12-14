@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import './filterBar.scss'
 import DropDown from "./dropMenus/DropDown";
+import BrendsDown from "./dropMenus/BrendsDown";
+import LengthRange from "./dropMenus/LengthRange";
 
 const FilterBar = () => {
 
@@ -8,6 +10,10 @@ const FilterBar = () => {
         <aside className={'filterBar'}>
             <h3>Наборы инструмента бытового</h3>
            <DropDown/>
+
+            <BrendsDown/>
+            <LengthRange min={60} max={250}/>
+
             <div className={'kinds'}>
                 <h4>Бренд</h4>
                <div>
@@ -23,37 +29,6 @@ const FilterBar = () => {
                     <label htmlFor="">СИБРТЕХ</label>
                 </div>
             </div>
-            {/*<h3>Наборы инструмента бытового</h3>*/}
-            {/*<div className={'kinds'}>*/}
-            {/*    <h4>Группа товаров</h4>*/}
-            {/*    <div>*/}
-            {/*        <input type="checkbox"/>*/}
-            {/*        <label htmlFor="">Ручной инструмент</label>*/}
-            {/*    </div>*/}
-            {/*</div>*/}
-            {/*<div className={'kinds'}>*/}
-            {/*    <h4>Бренд</h4>*/}
-            {/*   <div>*/}
-            {/*       <input type="checkbox"/>*/}
-            {/*       <label htmlFor="">СИБРТЕХ</label>*/}
-            {/*   </div>*/}
-            {/*   <div>*/}
-            {/*       <input type="checkbox"/>*/}
-            {/*       <label htmlFor="">SPARTA</label>*/}
-            {/*   </div>*/}
-            {/*    <div>*/}
-            {/*        <input type="checkbox"/>*/}
-            {/*        <label htmlFor="">СИБРТЕХ</label>*/}
-            {/*    </div>*/}
-
-            {/*</div>*/}
-            {/*<div className={'kinds'}>*/}
-            {/*    <h4>Цена</h4>*/}
-            {/*    <div>*/}
-            {/*        <input type="checkbox"/>*/}
-            {/*        <label htmlFor="">Ручной инструмент</label>*/}
-            {/*    </div>*/}
-            {/*</div>*/}
         </aside>
     );
 };

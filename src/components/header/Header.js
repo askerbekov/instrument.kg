@@ -1,6 +1,8 @@
 import React from 'react';
 import './header.scss'
 import Subheader from "./Subheader";
+import BrandsPage from "../../pages/BrandsPage";
+import {Link} from "react-router-dom";
 
 const Header = () => {
   return (
@@ -8,8 +10,9 @@ const Header = () => {
       <header className={'header'} id={'header'}>
         <div className="container header__wrap">
           <nav className={'header__navigation'}>
+
             <a href="#">О нас</a>
-            <a href="#">Бренды</a>
+            <Link to={'/brands'}> Бренды</Link>
             <a href="#">Акции</a>
           </nav>
           <div className={'header__address'}>
