@@ -1,7 +1,7 @@
 import React, {memo, useState} from 'react';
 import categories from "../categories/categories";
 import AsideCatalog from "../header/AsideCatalog";
-import '../styles/catalog.scss'
+import './catalog.scss'
 import {Link} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {SET_CATEGORY, SET_PODCATEGORY} from "../../redux/types/types";

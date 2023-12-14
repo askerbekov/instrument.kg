@@ -1,5 +1,5 @@
 import React, {memo, useEffect, useState} from 'react';
-import '../styles/subheader.scss'
+import './subheader.scss'
 import Search from "../search/Search";
 import Catalog from "../catalog/Catalog";
 import {Link} from "react-router-dom";
@@ -14,6 +14,7 @@ const Subheader = memo(() => {
   const scrollToHeader = () => {
     const header = document.getElementById('header')
     if(header){
+      console.log('scroll')
       header.scrollIntoView({behavior: 'smooth'})
     }
   }

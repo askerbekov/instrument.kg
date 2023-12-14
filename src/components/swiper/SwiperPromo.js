@@ -11,10 +11,7 @@ import 'swiper/css/pagination';
 import './swiperPromo.scss';
 
 
-
-
 const SwiperPromo = ({promoProducts}) => {
-  console.log(promoProducts)
 
   return (
     <>
@@ -23,7 +20,7 @@ const SwiperPromo = ({promoProducts}) => {
         navigation={true}
         keyboard={true}
         autoplay={{
-          delay: 2500,
+          delay: 40500,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -34,7 +31,7 @@ const SwiperPromo = ({promoProducts}) => {
         loop={true}
         initialSlide={promoProducts.length - 1}
         modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
-        className="mySwiper"
+        className="mySwiper promo-Swiper"
       >
         {
           promoProducts?.map(product => {
@@ -43,7 +40,8 @@ const SwiperPromo = ({promoProducts}) => {
                 key={product.id}
                 className={''}
               >
-                <img className={'img-promo'} src={product.thumbnail} alt=""/>
+                <img className={'img-promo'} src={'https://picsum.photos/1440/900'} alt=""/>
+                <h2 className={'description'}>{product.description}</h2>
               </SwiperSlide>
             )
           })
