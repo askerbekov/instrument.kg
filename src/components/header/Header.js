@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/header.scss'
+import './header.scss'
 import Subheader from "./Subheader";
 import BrandsPage from "../../pages/BrandsPage";
 import {Link} from "react-router-dom";
