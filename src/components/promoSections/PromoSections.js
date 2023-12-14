@@ -2,6 +2,8 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {getPromoProducts} from "../../redux/action/promorProductsAction";
 import SwiperPromo from "../swiper/SwiperPromo";
+import SwiperBrands from "../swiper/SwiperBrands";
+import './actionProducts.scss'
 
 const PromoSections = () => {
   const dispatch = useDispatch()

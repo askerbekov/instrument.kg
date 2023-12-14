@@ -51,6 +51,7 @@ ul li {
 .header-stick {
   position: sticky;
   top: 0;
+  z-index: 10;
 }
 
 .container {
@@ -128,4 +129,15 @@ ul li {
   background-image: url("./components/assets/arrow.png");
   width: 11px;
   height: 7px;
+}
+
+.title-brands {
+  padding: 20px 0;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #001427;
+  padding: 20px 20px;
 }
