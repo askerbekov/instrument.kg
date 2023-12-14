@@ -17,21 +17,21 @@ const Products = () => {
   return (
     <div className="viewTools">
       {
-        // category && category?.map( category => {
-        //   return (
-        //     <div key={category.id}>
-        //       <div className={'cardInfo'}>
-        //         <div className={'imgCarad'}>
-        //           <img src={category.image} alt=""/>
-        //         </div>
-        //         <div className={'titleCard'}>
-        //           <h3>{category.heading}</h3>
-        //           <h4>{category.rating}</h4>
-        //         </div>
-        //       </div>
-        //     </div>
-        //   )``
-        // })
+        category && category?.map( category => {
+          return (
+            <div key={category.id}>
+              <div className={'cardInfo'}>
+                <div className={'imgCarad'}>
+                  <img src={category.image} alt=""/>
+                </div>
+                <div className={'titleCard'}>
+                  <h3>{category.heading}</h3>
+                  {/*<h4>{category.rating}</h4>*/}
+                </div>
+              </div>
+            </div>
+          )
+        })
       }
     </div>
   );
