@@ -1,0 +1,56 @@
+.tool-section {
+  padding: 20px 0;
+}
+.title-tool {
+  color: #001427;
+  font-size: 24px;
+  font-weight: 600;
+  padding: 10px 0;
+}
+
+.box-title {
+  border-bottom: 1px solid #e7e7ec;
+
+  & .article-tool {
+    padding: 10px 0;
+    & span {
+      color: #001427;
+      font-weight: 600;
+    }
+  }
+}
+
+.tool {
+  padding: 30px 0;
+}
+
+.tool-box{
+  display: flex;
+  & .tool-slider{
+    width: 10%;
+    border: 1px solid red;
+  }
+  & .tool-img {
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.tool-description {
+  & .img-brands {
+    width: 300px;
+    height: 70px;
+
+    & img {
+
+    }
+  }
+}
+
+.box-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
