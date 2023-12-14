@@ -8,12 +8,12 @@ import './swiperBrands.scss'
 import {Link} from "react-router-dom";
 import Product from "../poducts/Product";
 
-const SwiperBrands = memo(({}) => {
+const SwiperBrands = memo(({name}) => {
   return (
     <>
       <h2 className={'title-brands'}>
         <Link to={''} className={'section-title'}>
-          Makita
+          {name || 'makita'}
         </Link>
       </h2>
       <Swiper
