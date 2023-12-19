@@ -1,8 +1,26 @@
-.swiper-slide {
-  height: 500px;
+.promo-Swiper {
+  .swiper-slide {
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .img-promo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .description {
+    box-shadow: 0px 1px 24px 2px rgba(34, 60, 80, 0.17);
+    top: 50px;
+    left: 50px;
+    max-width: 400px;
+    padding: 20px;
+    color: black;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    position: absolute;
+  }
 }
 
-.img-promo {
-  width: 100%;
-  height: 100%;
-}
