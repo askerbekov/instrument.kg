@@ -3,28 +3,27 @@ import './subheader.scss'
 import Search from "../search/Search";
 import Catalog from "../catalog/Catalog";
 import {Link} from "react-router-dom";
+import {scrollToHeader} from "../scrollFunction";
+import {useDispatch, useSelector} from "react-redux";
+
+
 const Subheader = memo(() => {
   const [isOpenCatalog, setIsOpenCatalog] = useState(false)
-
+  const dispatch = useDispatch()
 
   const handleClickCatalog = () => {
     setIsOpenCatalog(!isOpenCatalog)
   }
 
-  const scrollToHeader = () => {
-    const header = document.getElementById('header')
-    if(header){
-      console.log('scroll')
-      header.scrollIntoView({behavior: 'smooth'})
-    }
-  }
 
   return (
     <header className={`${isOpenCatalog ? '' : 'header-stick'}`}>
       <div className="subheader">
         <Catalog isOpenCatalog={isOpenCatalog} setOpenCatalog={setIsOpenCatalog}/>
         <div className="container subheader-wrap">
-          <Link to={'/'}>
+          <Link
+            to={'/'}
+          >
             <i className={'icon logo'}></i>
           </Link>
           <div className={'subheader-catalog'}>
@@ -50,10 +49,10 @@ const Subheader = memo(() => {
             </div>
             <Search/>
           </div>
-          <a href={'#'} className={'carts'}>
+          <Link to={'/carts'} className={'carts'}>
             Корзинка
             <i className={'icon carts-icon'}></i>
-          </a>
+          </Link>
         </div>
       </div>
     </header>

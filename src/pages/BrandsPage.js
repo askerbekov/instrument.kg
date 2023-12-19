@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Layout from "../components/layout/Layout";
 import '../components/styles/brends.scss'
 import Denzel from '../components/assets/brandsAssets/1.png'
@@ -15,6 +15,8 @@ import Kronwerk from '../components/assets/brandsAssets/11.png'
 import Stroymash from '../components/assets/brandsAssets/12.png'
 
 const BrandsPage = () => {
+
+
     return (
         <Layout>
             <div className={'container'}>

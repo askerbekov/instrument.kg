@@ -11,6 +11,12 @@ const Catalog = memo(({isOpenCatalog, setOpenCatalog}) => {
 
   const [podcatalog, setPodcatalog] = useState(categories.category[0])
 
+
+
+  const handleSetBreadCrumbs = () => {
+
+  }
+
   const handleHoverCatalog = (el) => {
     setPodcatalog(el)
   }
@@ -40,6 +46,8 @@ const Catalog = memo(({isOpenCatalog, setOpenCatalog}) => {
                   <Link
                     key={i}
                     onClick={event => {
+                      handleSetBreadCrumbs()
+                      console.log(podcatalog, podcat)
                       dispatch({type:SET_CATEGORY, payload: podcatalog})
                       dispatch({type: SET_PODCATEGORY, payload: {id: i, podcategory: podcat}})
                       setOpenCatalog(false)

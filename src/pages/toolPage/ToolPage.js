@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Layout from "../../components/layout/Layout";
 import './toolPage.scss'
 import '../../components/styles/column-row.scss'
@@ -7,6 +7,7 @@ import logoBrands from '../../components/assets/logoBrands.png'
 import SwiperBrands from "../../components/swiper/SwiperBrands";
 
 const ToolPage = () => {
+
   return (
     <Layout>
       <section className={'tool-section'}>

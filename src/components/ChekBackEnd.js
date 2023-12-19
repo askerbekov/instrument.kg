@@ -14,11 +14,14 @@ const ChekBackEnd = () => {
     // console.log(typeof photoForm.files)
     // const photos = []
     for (let elem of photoForm.files){
+      // formData.append('photo', elem)
+
+
       photo.push(elem)
     }
     console.log(photo)
 
-    formData.append('photo', photo)
+    formData.append('photo', photo[0])
     // console.log(photos)
     // Добавляем все файлы в массив
     // formData.append('photo', photoForm.files);
