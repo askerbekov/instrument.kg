@@ -13,6 +13,7 @@ import Elfe from '../components/assets/brandsAssets/9.png'
 import Stern from '../components/assets/brandsAssets/10.png'
 import Kronwerk from '../components/assets/brandsAssets/11.png'
 import Stroymash from '../components/assets/brandsAssets/12.png'
+import {Link} from "react-router-dom";
 
 const BrandsPage = () => {
     return (
@@ -22,62 +23,62 @@ const BrandsPage = () => {
                 <div className="row">
                     <div className="col-3">
                         <div className="box">
-                            <img src={Denzel} alt="Denzel"/>
+                            <Link to={`/brands/${'denzel'}`} ><img src={Denzel} alt="Denzel"/></Link>
                         </div>
                     </div>
                     <div className="col-3">
                         <div className="box">
-                            <img src={Matrix} alt="Matrix"/>
+                            <Link to={`/brands/${'matrix'}`} ><img src={Matrix} alt="Matrix"/></Link>
                         </div>
                     </div>
                     <div className="col-3">
                         <div className="box">
-                            <img src={Stels} alt="Stels"/>
+                            <Link to={`/brands/${'stels'}`} ><img src={Stels} alt="Stels"/></Link>
                         </div>
                     </div>
                     <div className="col-3">
                         <div className="box">
-                            <img src={Sibrtekh} alt="Sibrtekh"/>
+                            <Link to={`/brands/${'sibrtekh'}`} ><img src={Sibrtekh} alt="Sibrtekh"/></Link>
                         </div>
                     </div>
                     <div className="col-3">
                         <div className="box">
-                            <img src={Bars} alt="Bars"/>
+                            <Link to={`/brands/${'bars'}`} ><img src={Bars} alt="Bars"/></Link>
                         </div>
                     </div>
                     <div className="col-3">
                         <div className="box">
-                            <img src={Sparta} alt="Sparta"/>
+                            <Link to={`/brands/${'sparta'}`} ><img src={Sparta} alt="Sparta"/></Link>
                         </div>
                     </div>
                     <div className="col-3">
                         <div className="box">
-                            <img src={Palisad} alt="Palisad"/>
+                            <Link to={`/brands/${'palisad'}`} ><img src={Palisad} alt="Palisad"/></Link>
                         </div>
                     </div>
                     <div className="col-3">
                         <div className="box">
-                            <img src={Gross} alt="Gross"/>
+                            <Link to={`/brands/${'gross'}`} ><img src={Gross} alt="Gross"/></Link>
                         </div>
                     </div>
                     <div className="col-3">
                         <div className="box">
-                            <img src={Elfe} alt="Elfe"/>
+                            <Link to={`/brands/${'elfe'}`} ><img src={Elfe} alt="Elfe"/></Link>
                         </div>
                     </div>
                     <div className="col-3">
                         <div className="box">
-                            <img src={Stern} alt="Stern"/>
+                            <Link to={`/brands/${'stern'}`} ><img src={Stern} alt="Stern"/></Link>
                         </div>
                     </div>
                     <div className="col-3">
                         <div className="box">
-                            <img src={Kronwerk} alt="Kronwerk"/>
+                            <Link to={`/brands/${'kronwerk'}`} ><img src={Kronwerk} alt="Kronwerk"/></Link>
                         </div>
                     </div>
                     <div className="col-3">
                         <div className="box">
-                            <img src={Stroymash} alt="Stroymash"/>
+                            <Link to={`/brands/${'stroymash'}`} ><img src={Stroymash} alt="Stroymash"/></Link>
                         </div>
                     </div>
                 </div>
