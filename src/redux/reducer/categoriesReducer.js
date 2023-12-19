@@ -1,4 +1,4 @@
-import {SET_CATEGORY, SET_PODCATEGORY} from "../types/types";
+import {CLEAR_CATEGORY, SET_CATEGORY, SET_PODCATEGORY} from "../types/types";
 
 const initialState = {
     categories: [],
@@ -11,6 +11,8 @@ export default function  categoriesReducer (state = initialState, action) {
             return {...state, categories: action.payload}
         case SET_PODCATEGORY:
             return {...state, podcategories: action.payload[0], categories: action.payload[1]}
+        case CLEAR_CATEGORY:
+            return {}
         default:
             return state
     }

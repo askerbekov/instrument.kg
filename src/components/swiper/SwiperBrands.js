@@ -55,6 +55,9 @@ const SwiperBrands = memo(({name}) => {
         <SwiperSlide>
           <Product/>
         </SwiperSlide>
+        <SwiperSlide>
+          <Product/>
+        </SwiperSlide>
 
       </Swiper>
     </>
