@@ -1,7 +1,15 @@
 import React, {useState} from 'react';
 
-const LengthRange = ({min, max}) => {
+const LengthRange = ({ min = 20, max = 50, value = 40 }) => {
     const [isOpen, setIsOpen] = useState(false)
+
+        const [position, setPosition] = useState(value);
+        const [valueText, setValueText] = useState(value);
+
+        const handleChange = (event) => {
+            setPosition(event.target.value);
+            setValueText(event.target.value);
+        };
 
     return (
         <div>
@@ -14,16 +22,29 @@ const LengthRange = ({min, max}) => {
                     <i className={`icon arrow ${isOpen ? 'arrow-down' : ''}`}></i>
                 </div>
                 <div className={`drop-info ${isOpen ? 'drop-none' : ''}`}>
-                    <label htmlFor="length">
-                        <input
-                            id="length"
-                            type="range"
-                            min={min}
-                            max={max}
-                        />
-                    </label>
-                </div>
+                    <div className={"from-to"}>
+                       <div>
+                           <label>от</label>
+                           <input
+                               type="number"
+                               min={min}
+                               value={position}
+                               onChange={handleChange}
 
+                           />
+                       </div>
+                        <div>
+                            <label>до</label>
+                            <input
+                                type="number"
+                                value={valueText}
+                                max={max}
+                                onChange={handleChange}
+
+                            />
+                        </div>
+                    </div>
+                </div>
             </section>
         </div>
     );

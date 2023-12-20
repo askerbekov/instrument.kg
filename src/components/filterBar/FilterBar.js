@@ -12,23 +12,7 @@ const FilterBar = () => {
            <DropDown/>
 
             <BrendsDown/>
-            <LengthRange min={60} max={250}/>
-
-            <div className={'kinds'}>
-                <h4>Бренд</h4>
-               <div>
-                   <input type="checkbox"/>
-                   <label htmlFor="">СИБРТЕХ</label>
-               </div>
-               <div>
-                   <input type="checkbox"/>
-                   <label htmlFor="">SPARTA</label>
-               </div>
-                <div>
-                    <input type="checkbox"/>
-                    <label htmlFor="">СИБРТЕХ</label>
-                </div>
-            </div>
+            <LengthRange min={0} max={250}/>
         </aside>
     );
 };
