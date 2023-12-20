@@ -1,0 +1,11 @@
+.order-stick {
+  background-color: #FFFFFF;
+  position: sticky;
+  top: 80px;
+
+  & .txt-order {
+    font-size: 22px;
+    color: #001427;
+    font-weight: 500;
+  }
+}

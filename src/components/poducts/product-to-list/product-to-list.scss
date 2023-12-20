@@ -1,0 +1,36 @@
+.product-to-list {
+
+
+  border-bottom: 1px solid #e7e7ec;
+  & .img-product {
+    width: 80px;
+    height: 80px;
+    //width: 100%;
+    //height: 100%;
+
+    & .img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  & .product-information {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+
+
+    & .product-title {
+      display: flex;
+      gap: 20px;
+    }
+  }
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  //justify-content: center;
+}
