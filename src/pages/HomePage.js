@@ -4,10 +4,15 @@ import PromoSections from "../components/promoSections/PromoSections";
 import BrandsProductSection from "../components/sections Brands Products/BrandsProductSection";
 import {useDispatch} from "react-redux";
 import ChekBackEnd from "../components/ChekBackEnd";
+import {getProducts} from "../redux/action/getProductsAction";
 
 const HomePage = () => {
   const dispatch = useDispatch()
 
+  useEffect(() => {
+    dispatch(getProducts())
+    // dispatch({type:"CLEAR"})
+  },[])
   return (
     <Layout>
       {/*<ChekBackEnd/>*/}
