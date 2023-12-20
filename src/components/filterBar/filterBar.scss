@@ -29,8 +29,26 @@
       gap: 10px;
       align-items: center;
     }
+
     & .drop-none{
       display: none;
+    }
+    & .from-to{
+      display: flex;
+      gap: 10px;
+
+    }
+    & .from-to div {
+      border: 1px solid #E7E7EC;
+      border-radius: 5px;
+      padding: 5px 1px;
+      display: flex;
+      width: 50%;
+      gap: 5px;
+
+    }
+    & .from-to div input {
+      width: 70px;
     }
   }
 
