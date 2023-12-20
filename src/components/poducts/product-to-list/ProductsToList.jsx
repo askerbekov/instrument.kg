@@ -1,19 +1,21 @@
 import React, {useEffect, useState} from 'react';
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {ADD_CARTS_PRODUCT, DELETE_PRODUCT} from "../../../redux/types/types";
 import {Link} from "react-router-dom";
 import './product-to-list.scss'
 import Increment from "../../btn/increment";
+import cartReducer from "../../../redux/reducer/cartsReducer";
 
 const ProductsToList = (props) => {
   const {
     product,
-    carts,
+    // carts,
     itsCart,
   } = props
 
   const dispatch = useDispatch()
   const [cartDelete, setCartDelete] = useState(false)
+  const carts = useSelector(state => state.cartReducer.carts)
   useEffect(() => {
     if (Array.isArray(carts)) {
       const isProductInCart = carts?.some(cartItem => cartItem.id === product.id);
