@@ -4,7 +4,6 @@ import {useSelector} from "react-redux";
 
 const BrandsProductSection = () => {
   const carts = useSelector(state => state.cartReducer.carts)
-  console.log(carts)
   return (
     <section className={'brand-product-section'}>
       <div className="container">

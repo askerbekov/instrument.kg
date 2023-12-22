@@ -1,10 +1,9 @@
-import React, {memo, useRef, useState} from 'react';
+import React, {memo} from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 // import required modules
 import {Navigation, Pagination, Mousewheel, Keyboard, Autoplay} from 'swiper/modules';
 
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -12,7 +11,7 @@ import './swiperPromo.scss';
 import {Skeleton} from "@mui/material";
 
 
-const SwiperPromo = memo(({promoProducts}) => {
+const SwiperPromo = memo(({promoProducts, loading}) => {
 
   return (
     <>
@@ -41,7 +40,7 @@ const SwiperPromo = memo(({promoProducts}) => {
                 key={product.id}
                 className={''}
               >
-                <img className={'img-promo'} src={'https://picsum.photos/240/240'} alt=""/>
+                <img className={'img-promo'} src={'https://picsum.photos/1920/1440'} alt=""/>
                 <h2 className={'description'}>{product.description}</h2>
               </SwiperSlide>
             )

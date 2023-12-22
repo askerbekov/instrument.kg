@@ -1,0 +1,38 @@
+.input-order{
+  border: 1px solid red;
+}
+
+.form-order {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.box-form {
+  display: flex;
+  //flex-direction: column;
+  gap: 20px;
+  align-items: center;
+
+  & p {
+    //color: #001427;
+    width: 220px;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: right;
+  }
+  & .txt-align-left{
+    text-align: left;
+  }
+}
+.btn-box {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.delivery_chekbox {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
