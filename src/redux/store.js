@@ -7,6 +7,7 @@ import categoriesReducer from "./reducer/categoriesReducer";
 import promoProductReducer from "./reducer/promoProductReducer";
 import cartReducer from "./reducer/cartsReducer";
 import productsReducer from "./reducer/productsReducer";
+import toolReducer from "./reducer/toolReducer";
 
 
 
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
   promoProductReducer: promoProductReducer,
   cartReducer : cartReducer,
   productsReducer: productsReducer,
+  toolReducer:toolReducer,
 });
 
 const persistConfig = {

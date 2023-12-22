@@ -2,7 +2,7 @@ import React, {memo, useEffect, useState} from 'react';
 import './product.scss'
 import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {ADD_CARTS_PRODUCT, DELETE_PRODUCT} from "../../../redux/types/types";
+import {ADD_CARTS_PRODUCT, DELETE_PRODUCT, GET_TOOL} from "../../../redux/types/types";
 
 const Product = memo((props) => {
   const {
@@ -26,18 +26,23 @@ const Product = memo((props) => {
   const addCarts = () => {
     dispatch({type: ADD_CARTS_PRODUCT, payload: product})
   }
+  const handleGetTool = () => {
+    dispatch({type:GET_TOOL, payload:product})
+  }
 
   return (
     <div className={'product'}>
       <div className={'img-product'}>
         <Link
           to={'/tool'}
+          onClick={event => handleGetTool()}
         >
           <img className={'img'} src={product.thumbnail} alt=""/>
         </Link>
       </div>
       <Link
         to={'/tool'}
+        onClick={event => handleGetTool()}
       >
         <div className={'product-title'}>
           <p className={'product-articl'}>1234567</p>
