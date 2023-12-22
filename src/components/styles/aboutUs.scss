@@ -1,0 +1,46 @@
+.abouts-header {
+display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.abouts-header h2 {
+  font-size: 40px;
+}
+.abouts-header p {
+  font-size: 23px;
+}
+.abouts-main {
+  text-shadow: #000 0.5px 0 5px;
+  color: #DC0000;
+  text-transform: uppercase;
+  margin: 25px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+}
+.abouts-main div {
+  width: 25%;
+}
+.abouts-main h3 {
+  font-size: 50px;
+}
+.abouts-main p {
+  font-size: 20px;
+}
+
+
+.col-desc {
+  color: #c4c4c4;
+  background: #001427;
+  padding: 80px;
+  border-radius: 50px;
+}
+.col-desc h2{
+  font-size: 40px;
+}
+.col-desc p {
+  font-size: 23px;
+}
+.box img {
+  width: 350px;
+}

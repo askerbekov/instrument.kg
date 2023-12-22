@@ -6,6 +6,7 @@ import BrandsPage from "./pages/BrandsPage";
 import ToolPage from "./pages/toolPage/ToolPage";
 import ScrollToTop from "./components/scrollToTop";
 import CartsPage from "./pages/cartsPage/CartsPage";
+import AboutUs from "./pages/AboutUs";
 
 const App = () => {
 
@@ -31,6 +32,7 @@ const App = () => {
         <Route path={'/categories/:categoriesId'} element={<CategoriesPage/>} />
         <Route path={'/categories/:categoriesId'} element={<CategoriesPage/>} />
         <Route path={'/categories/:categoriesId/podcatalog/:podcatalogId'} element={<CategoriesPage/>} />
+          <Route path={'/aboutUs'} element={<AboutUs/>} />
         <Route path={'/brands'} element={<BrandsPage/>} />
         <Route path={'/brands/:brand'} element={<CategoriesPage/>} />
         <Route path={'/tool'} element={<ToolPage/>} />

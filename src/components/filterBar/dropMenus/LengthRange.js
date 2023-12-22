@@ -3,12 +3,14 @@ import React, {useState} from 'react';
 const LengthRange = ({ min = 20, max = 50, value = 40 }) => {
     const [isOpen, setIsOpen] = useState(false)
 
-        const [position, setPosition] = useState(value);
-        const [valueText, setValueText] = useState(value);
+    const [fromValue, setFromValue] = useState(value);
+    const [toValue, setToValue] = useState(value);
 
-        const handleChange = (event) => {
-            setPosition(event.target.value);
-            setValueText(event.target.value);
+    const handleFromChange = (event) => {
+        setFromValue(event.target.value);
+    };
+        const handleToChange = (event) => {
+            setToValue(event.target.value);
         };
 
     return (
@@ -28,8 +30,8 @@ const LengthRange = ({ min = 20, max = 50, value = 40 }) => {
                            <input
                                type="number"
                                min={min}
-                               value={position}
-                               onChange={handleChange}
+                               value={fromValue}
+                               onChange={handleFromChange}
 
                            />
                        </div>
@@ -37,9 +39,9 @@ const LengthRange = ({ min = 20, max = 50, value = 40 }) => {
                             <label>до</label>
                             <input
                                 type="number"
-                                value={valueText}
+                                value={toValue}
                                 max={max}
-                                onChange={handleChange}
+                                onChange={handleToChange}
 
                             />
                         </div>
