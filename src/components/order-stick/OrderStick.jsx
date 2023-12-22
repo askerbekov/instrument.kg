@@ -1,11 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './order-stick.scss'
+import ModalOrder from "../modal/ModalOrder";
+
+
 
 const OrderStick = ({carts}) => {
 
+  const [open, setOpen] = useState(false)
+
+  const handleOpen = () => {
+    setOpen(true)
+  }
+
+  const handleClose = () => {
+    setOpen(false)
+  }
   return (
     <div className={'order-stick'}>
       <div className="container">
+        <ModalOrder handleClose={handleClose} open={open}/>
         <div className="row">
           <div className="col-5">
             <div className="box">
@@ -31,7 +44,10 @@ const OrderStick = ({carts}) => {
           </div>
           <div className="col-3 center">
             <div className="box">
-              <button className={'add-cart-btn'}>
+              <button
+                className={'add-cart-btn'}
+                onClick={handleOpen}
+              >
                 Оформить заказ
               </button>
             </div>

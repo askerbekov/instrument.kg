@@ -18,6 +18,8 @@ import {useSelector} from "react-redux";
 
 const SwiperBrands = memo(({name, carts}) => {
   const products = useSelector(state => state.productsReducer.products)
+  // const loading = true
+
 
   return (
     <>
@@ -39,13 +41,13 @@ const SwiperBrands = memo(({name, carts}) => {
         className="mySwiper miniSwiper"
       >
         {
-         products?.map(product => {
-           return(
-             <SwiperSlide key={product.id}>
-               <Product product={{...product}} carts={carts}/>
-             </SwiperSlide>
-           )
-         })
+          products?.map(product => {
+            return(
+              <SwiperSlide key={product.id}>
+                <Product product={{...product}} carts={carts}/>
+              </SwiperSlide>
+            )
+          })
         }
       </Swiper>
     </>
