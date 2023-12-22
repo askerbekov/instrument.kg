@@ -1,6 +1,6 @@
 import React, {memo, useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {ADD_CARTS_PRODUCT, DELETE_PRODUCT} from "../../../redux/types/types";
+import {ADD_CARTS_PRODUCT, DELETE_PRODUCT, GET_TOOL} from "../../../redux/types/types";
 import {Link} from "react-router-dom";
 import './product-to-list.scss'
 import Increment from "../../btn/increment";
@@ -31,6 +31,11 @@ const ProductsToList = (props) => {
   const addCarts = () => {
     dispatch({type: ADD_CARTS_PRODUCT, payload: product})
   }
+
+  const handleGetTool = () => {
+    dispatch({type:GET_TOOL, payload:product})
+  }
+
   return (
     <>
       {
@@ -41,6 +46,7 @@ const ProductsToList = (props) => {
                 <div className={'img-product'}>
                   <Link
                     to={'/tool'}
+                    onClick={event => handleGetTool()}
                   >
                     <img className={'img'} src={product.thumbnail} alt=""/>
                   </Link>
@@ -48,12 +54,22 @@ const ProductsToList = (props) => {
               </div>
               <div className="col-2 center">
                 <div className="box">
-                  <p className={'product-articl'}>1234567</p>
+                  <Link
+                    to={'/tool'}
+                    onClick={event => handleGetTool()}
+                  >
+                    <p className={'product-articl'}>1234567</p>
+                  </Link>
                 </div>
               </div>
               <div className="col-2 center">
                 <div className="box">
-                  <p className={'product-name'}>{product.title}</p>
+                  <Link
+                    to={'/tool'}
+                    onClick={event => handleGetTool()}
+                  >
+                    <p className={'product-name'}>{product.title}</p>
+                  </Link>
                 </div>
               </div>
               <div className="col-2 center">
@@ -94,12 +110,22 @@ const ProductsToList = (props) => {
               </div>
               <div className="col-2 center">
                 <div className="box">
-                  <p className={'product-articl'}>1234567</p>
+                  <Link
+                    to={'/tool'}
+                    onClick={event => handleGetTool()}
+                  >
+                    <p className={'product-articl'}>1234567</p>
+                  </Link>
                 </div>
               </div>
               <div className="col-3 center">
                 <div className="box">
-                  <p className={'product-name'}>{product.title}</p>
+                  <Link
+                    to={'/tool'}
+                    onClick={event => handleGetTool()}
+                  >
+                    <p className={'product-name'}>{product.title}</p>
+                  </Link>
                 </div>
               </div>
               <div className="col-2 center">
