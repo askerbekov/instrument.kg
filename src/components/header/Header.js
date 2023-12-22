@@ -11,7 +11,7 @@ const Header = () => {
         <div className="container header__wrap">
           <nav className={'header__navigation'}>
 
-            <a href="#">О нас</a>
+            <Link to={'/aboutUs'}>О нас</Link>
             <Link to={'/brands'}> Бренды</Link>
             <a href="#">Акции</a>
           </nav>
