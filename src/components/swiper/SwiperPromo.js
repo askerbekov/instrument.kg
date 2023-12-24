@@ -9,9 +9,11 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import './swiperPromo.scss';
 import {Skeleton} from "@mui/material";
+import PromoSlide from "./PromoSlide";
 
 
-const SwiperPromo = memo(({promoProducts, loading}) => {
+const SwiperPromo = memo(({promoProducts}) => {
+
 
   return (
     <>
@@ -40,8 +42,7 @@ const SwiperPromo = memo(({promoProducts, loading}) => {
                 key={product.id}
                 className={''}
               >
-                <img className={'img-promo'} src={'https://picsum.photos/1920/1440'} alt=""/>
-                <h2 className={'description'}>{product.description}</h2>
+                <PromoSlide product={product}/>
               </SwiperSlide>
             )
           })

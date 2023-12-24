@@ -3,7 +3,7 @@ import {GET_PRODUCTS} from "../types/types";
 
 const initialstate = {
   products: [],
-  loading:false,
+  loading:true,
 }
 
 export default function productsReducer (state = initialstate, action){
