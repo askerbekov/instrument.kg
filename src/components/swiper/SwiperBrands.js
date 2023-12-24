@@ -19,7 +19,7 @@ import SkeletonProduct from "../poducts/prodcut-plits/SkeletonProduct";
 
 const skeletonProduct=[1,2,3,4,5,6,7,8]
 
-const SwiperBrands = memo(({name, carts}) => {
+const SwiperBrands = memo(({name}) => {
   const products = useSelector(state => state.productsReducer.products)
   const loading = useSelector(state => state.productsReducer.loading)
 
@@ -54,7 +54,7 @@ const SwiperBrands = memo(({name, carts}) => {
           products?.map(product => {
             return(
               <SwiperSlide key={product.id}>
-                <Product product={{...product}} carts={carts}/>
+                <Product product={{...product}}/>
               </SwiperSlide>
             )
           })

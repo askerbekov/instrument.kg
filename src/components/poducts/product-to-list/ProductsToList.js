@@ -10,7 +10,6 @@ import {Skeleton} from "@mui/material";
 const ProductsToList = memo((props) => {
   const {
     product,
-    // carts,
     itsCart,
   } = props
 

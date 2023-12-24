@@ -3,24 +3,27 @@ import SwiperBrands from "../swiper/SwiperBrands";
 import {useSelector} from "react-redux";
 
 const BrandsProductSection = memo(() => {
-  const carts = useSelector(state => state.cartReducer.carts)
   return (
     <section className={'brand-product-section'}>
       <div className="container">
-        <SwiperBrands carts={carts}/>
-        <SwiperBrands carts={carts}/>
-        <SwiperBrands carts={carts}/>
-        <SwiperBrands carts={carts}/>
-        <SwiperBrands carts={carts}/>
-        <SwiperBrands carts={carts}/>
-        <SwiperBrands carts={carts}/>
-        <SwiperBrands carts={carts}/>
-        <SwiperBrands carts={carts}/>
-        <SwiperBrands carts={carts}/>
-        <SwiperBrands carts={carts}/>
-        <SwiperBrands carts={carts}/>
-        <SwiperBrands carts={carts}/>
-        <SwiperBrands carts={carts}/>
+        <SwiperBrands  />
+        <SwiperBrands />
+        <SwiperBrands />
+        <SwiperBrands />
+        <SwiperBrands />
+        <SwiperBrands />
+        <SwiperBrands />
+        <SwiperBrands />
+        <SwiperBrands />
+        <SwiperBrands />
+        <SwiperBrands />
+        <SwiperBrands />
+        <SwiperBrands />
+        <SwiperBrands />
+        <SwiperBrands />
+        <SwiperBrands />
+        <SwiperBrands />
+        <SwiperBrands />
       </div>
     </section>
   );

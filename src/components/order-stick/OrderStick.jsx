@@ -45,8 +45,9 @@ const OrderStick = ({carts}) => {
           <div className="col-3 center">
             <div className="box">
               <button
-                className={'add-cart-btn'}
+                className={carts.length === 0 ? 'disabled-btn' : 'add-cart-btn'}
                 onClick={handleOpen}
+                disabled={carts.length === 0}
               >
                 Оформить заказ
               </button>

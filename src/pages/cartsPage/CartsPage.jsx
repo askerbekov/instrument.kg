@@ -1,13 +1,12 @@
-import React, {useState} from 'react';
+import React, {memo, useState} from 'react';
 import Layout from "../../components/layout/Layout";
 import {useSelector} from "react-redux";
 import ProductsToList from "../../components/poducts/product-to-list/ProductsToList";
 import './carts-page.scss'
 import OrderStick from "../../components/order-stick/OrderStick";
-import Modal from "../../components/modal/ModalOrder";
 
 
-const CartsPage = () => {
+const CartsPage = memo(() => {
   const carts = useSelector(state => state.cartReducer.carts)
   // console.log(carts)
 
@@ -25,7 +24,7 @@ const CartsPage = () => {
             {
               carts.map(el => {
                 return(
-                  <ProductsToList key={el.id} product={el} carts={carts} itsCart={true}/>
+                  <ProductsToList key={el.id} product={el} itsCart={true}/>
                 )
               })
             }
@@ -34,6 +33,6 @@ const CartsPage = () => {
       </section>
     </Layout>
   );
-};
+});
 
 export default CartsPage;

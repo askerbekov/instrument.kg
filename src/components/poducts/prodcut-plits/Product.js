@@ -1,7 +1,7 @@
 import React, {memo, useEffect, useRef, useState} from 'react';
 import './product.scss'
 import {Link} from "react-router-dom";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {ADD_CARTS_PRODUCT, DELETE_PRODUCT, GET_TOOL} from "../../../redux/types/types";
 import {Skeleton} from "@mui/material";
 import axios from "axios";
@@ -9,15 +9,14 @@ import axios from "axios";
 const Product = memo((props) => {
   const {
     product,
-    carts,
   } = props
 
   const dispatch = useDispatch()
   const [cartDelete, setCartDelete] = useState(false)
   const [img, setImg] = useState(new Image());
   const [loadingImg, setLoadingImg] = useState(true)
-  // const [isVisible, setIsVisible] = useState(false);
   const imgRef = useRef(null);
+  const carts = useSelector(state => state.cartReducer.carts)
 
 
   useEffect(() => {
@@ -28,6 +27,7 @@ const Product = memo((props) => {
   }, [carts, product]);
 
   useEffect(() => {
+    const currentImgRef = imgRef.current;
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -40,13 +40,13 @@ const Product = memo((props) => {
       { threshold: 0.5 }
     );
 
-    if (imgRef.current) {
-      observer.observe(imgRef.current);
+    if (currentImgRef) {
+      observer.observe(currentImgRef);
     }
 
     return () => {
-      if (imgRef.current) {
-        observer.unobserve(imgRef.current);
+      if (currentImgRef) {
+        observer.unobserve(currentImgRef);
       }
     };
   }, [product]);
@@ -56,30 +56,14 @@ const Product = memo((props) => {
     setLoadingImg(true)
     try {
       const response = await axios.get(`${product.thumbnail}`, { responseType: 'blob' });
-      const url = URL.createObjectURL(response.data);
-      setImg(url);
+      const urlImg = URL.createObjectURL(response.data);
+      setImg(urlImg);
     } catch (error) {
       console.error('Ошибка при загрузке изображения:', error);
     } finally {
       setLoadingImg(false);
     }
   };
-  // useEffect(() => {
-  //   setLoadingImg(true)
-  //   if (product){
-  //     axios.get(`${product.thumbnail}`, { responseType: 'blob' })
-  //       .then(response => {
-  //         const url = URL.createObjectURL(response.data);
-  //         const newImg = new Image();
-  //         newImg.src = url;
-  //         setImg(newImg);
-  //       })
-  //       .catch(error => {
-  //         console.error('Ошибка при загрузке изображения:', error);
-  //       })
-  //       .finally(() => setLoadingImg(false))
-  //   }
-  // }, [product]);
 
   const deleteProductCarts = () => {
     dispatch({type: DELETE_PRODUCT, payload: product})
@@ -97,7 +81,7 @@ const Product = memo((props) => {
       <div className={'img-product'}>
         <Link
           to={'/tool'}
-          onClick={event => handleGetTool()}
+          onClick={event => handleGetTool(event)}
         >
           {loadingImg ?
             <>
@@ -117,7 +101,7 @@ const Product = memo((props) => {
       </div>
       <Link
         to={'/tool'}
-        onClick={event => handleGetTool()}
+        onClick={event => handleGetTool(event)}
       >
         <div className={'product-title'}>
           <p className={'product-articl'}>1234567</p>
@@ -128,7 +112,7 @@ const Product = memo((props) => {
       <button
         className={cartDelete ? 'delete-product' : 'add-cart-btn'}
         onClick={event => {
-          cartDelete ? deleteProductCarts(product) : addCarts(product)
+          cartDelete ? deleteProductCarts(event) : addCarts(event)
         }}
       >
         {
