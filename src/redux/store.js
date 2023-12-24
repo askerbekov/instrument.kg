@@ -22,7 +22,7 @@ const rootReducer = combineReducers({
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['categoriesReducer', 'cartReducer'],
+  whitelist: ['categoriesReducer', 'cartReducer', 'productsReducer'],
   // blacklist: ['resultDiscoverReducer']
 }
 

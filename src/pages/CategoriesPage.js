@@ -6,8 +6,8 @@ import categories from "../components/categories/categories";
 import Products from "../components/poducts/Products";
 import '../components/styles/categories-page.scss'
 import BreadCrumbs from "../components/breadcrumbs/BreadCrumbs";
-import {useEffect} from "react";
-const CategoriesPage = () => {
+import {memo} from "react";
+const CategoriesPage = memo(() => {
     const idCategory = useParams()
 
 
@@ -23,6 +23,6 @@ const CategoriesPage = () => {
     </Layout>
 
     );
-};
+});
 
 export default CategoriesPage;

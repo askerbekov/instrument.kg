@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import Layout from "../../components/layout/Layout";
 import './toolPage.scss'
 import '../../components/styles/column-row.scss'
-import toolImg from '../../components/assets/tool.jpg'
 import logoBrands from '../../components/assets/logoBrands.png'
 import SwiperBrands from "../../components/swiper/SwiperBrands";
 import {useDispatch, useSelector} from "react-redux";
