@@ -1,7 +1,7 @@
-import React, {memo, useEffect, useState} from 'react';
+import React, {memo, useEffect, useRef, useState} from 'react';
 import './product.scss'
 import {Link} from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {ADD_CARTS_PRODUCT, DELETE_PRODUCT, GET_TOOL} from "../../../redux/types/types";
 import {Skeleton} from "@mui/material";
 import axios from "axios";
@@ -15,33 +15,71 @@ const Product = memo((props) => {
   const dispatch = useDispatch()
   const [cartDelete, setCartDelete] = useState(false)
   const [img, setImg] = useState(new Image());
-  const [loadingImg, setLoadingImg] = useState(false)
+  const [loadingImg, setLoadingImg] = useState(true)
+  // const [isVisible, setIsVisible] = useState(false);
+  const imgRef = useRef(null);
 
 
   useEffect(() => {
-    if (Array.isArray(carts)){
+    if (Array.isArray(carts)) {
       const isProductInCart = carts?.some(cartItem => cartItem.id === product.id);
       setCartDelete(isProductInCart);
     }
   }, [carts, product]);
 
-
   useEffect(() => {
-    setLoadingImg(true)
-    if (product){
-      axios.get(`${product.thumbnail}`, { responseType: 'blob' })
-        .then(response => {
-          const url = URL.createObjectURL(response.data);
-          const newImg = new Image();
-          newImg.src = url;
-          setImg(newImg);
-        })
-        .catch(error => {
-          console.error('Ошибка при загрузке изображения:', error);
-        })
-        .finally(() => setLoadingImg(false))
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting ) {
+            loadImg()
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (imgRef.current) {
+      observer.observe(imgRef.current);
     }
+
+    return () => {
+      if (imgRef.current) {
+        observer.unobserve(imgRef.current);
+      }
+    };
   }, [product]);
+
+
+  const loadImg = async () => {
+    setLoadingImg(true)
+    try {
+      const response = await axios.get(`${product.thumbnail}`, { responseType: 'blob' });
+      const url = URL.createObjectURL(response.data);
+      setImg(url);
+    } catch (error) {
+      console.error('Ошибка при загрузке изображения:', error);
+    } finally {
+      setLoadingImg(false);
+    }
+  };
+  // useEffect(() => {
+  //   setLoadingImg(true)
+  //   if (product){
+  //     axios.get(`${product.thumbnail}`, { responseType: 'blob' })
+  //       .then(response => {
+  //         const url = URL.createObjectURL(response.data);
+  //         const newImg = new Image();
+  //         newImg.src = url;
+  //         setImg(newImg);
+  //       })
+  //       .catch(error => {
+  //         console.error('Ошибка при загрузке изображения:', error);
+  //       })
+  //       .finally(() => setLoadingImg(false))
+  //   }
+  // }, [product]);
 
   const deleteProductCarts = () => {
     dispatch({type: DELETE_PRODUCT, payload: product})
@@ -51,7 +89,7 @@ const Product = memo((props) => {
     dispatch({type: ADD_CARTS_PRODUCT, payload: product})
   }
   const handleGetTool = () => {
-    dispatch({type:GET_TOOL, payload:product})
+    dispatch({type: GET_TOOL, payload: product})
   }
 
   return (
@@ -61,10 +99,19 @@ const Product = memo((props) => {
           to={'/tool'}
           onClick={event => handleGetTool()}
         >
-          {loadingImg?
-            <Skeleton className={'img'} variant="rectangular" />
+          {loadingImg ?
+            <>
+              <Skeleton className={'img'} variant="rectangular"/>
+              <img loading={"lazy"} ref={imgRef} alt={product.name}/>
+            </>
             :
-            <img className={'img'} src={img.src} alt=""/>
+            <img
+              className={'img'}
+              src={img}
+              alt={product.name}
+              loading="lazy"
+              ref={imgRef}
+            />
           }
         </Link>
       </div>
@@ -73,20 +120,9 @@ const Product = memo((props) => {
         onClick={event => handleGetTool()}
       >
         <div className={'product-title'}>
-          {loadingImg?
-            <>
-              <Skeleton className={'product-articl'} variant="rectangular" />
-              <Skeleton className={'product-name'} variant="rectangular" />
-              <Skeleton className={'price'} variant="rectangular" />
-            </>
-            :
-            <>
-              <p className={'product-articl'}>1234567</p>
-              <p className={'product-name'}>{product.title}</p>
-              <p className={'price'}>{product.price} сом</p>
-            </>
-          }
-
+          <p className={'product-articl'}>1234567</p>
+          <p className={'product-name'}>{product.title}</p>
+          <p className={'price'}>{product.price} сом</p>
         </div>
       </Link>
       <button
@@ -96,7 +132,7 @@ const Product = memo((props) => {
         }}
       >
         {
-          cartDelete? 'Удалить с корзины' : 'добавить в корзину'
+          cartDelete ? 'Удалить с корзины' : 'добавить в корзину'
         }
       </button>
     </div>

@@ -1,12 +1,9 @@
-import React, {useEffect, useState} from 'react';
-import {useParams} from "react-router-dom";
-import categories from "../categories/categories";
+import React, {memo, useEffect, useState} from 'react';
 import axios from "axios";
 import {useSelector} from "react-redux";
-import productsReducer from "../../redux/reducer/productsReducer";
 import ProductsToList from "./product-to-list/ProductsToList";
 
-const Products = () => {
+const Products = memo(() => {
   const [category, setCategory] = useState()
   const products = useSelector(state => state.productsReducer.products)
 
@@ -23,7 +20,7 @@ const Products = () => {
       {
         products?.map(product => {
           return(
-            <ProductsToList product={product} />
+            <ProductsToList key={product.id} product={product} />
           )
         })
       }
@@ -48,6 +45,6 @@ const Products = () => {
       {/*}*/}
     </div>
   );
-};
+});
 
 export default Products;

@@ -4,8 +4,10 @@ import {ADD_CARTS_PRODUCT, DELETE_PRODUCT, GET_TOOL} from "../../../redux/types/
 import {Link} from "react-router-dom";
 import './product-to-list.scss'
 import Increment from "../../btn/increment";
+import axios from "axios";
+import {Skeleton} from "@mui/material";
 
-const ProductsToList = (props) => {
+const ProductsToList = memo((props) => {
   const {
     product,
     // carts,
@@ -15,6 +17,8 @@ const ProductsToList = (props) => {
   const dispatch = useDispatch()
   const [cartDelete, setCartDelete] = useState(false)
   const carts = useSelector(state => state.cartReducer.carts)
+  const [img, setImg] = useState();
+  const [loadingImg, setLoadingImg] = useState(true)
 
 
   useEffect(() => {
@@ -23,6 +27,23 @@ const ProductsToList = (props) => {
       setCartDelete(isProductInCart);
     }
   }, [carts, product]);
+
+  useEffect(() => {
+    // setLoadingImg(true)
+    if (product){
+      axios.get(`${product.thumbnail}`, { responseType: 'blob' })
+        .then(response => {
+          const url = URL.createObjectURL(response.data);
+          const newImg = new Image();
+          newImg.src = url;
+          setImg(newImg);
+        })
+        .catch(error => {
+          console.error('Ошибка при загрузке изображения:', error);
+        })
+        .finally(() => setLoadingImg(false))
+    }
+  }, [product]);
 
   const deleteProductCarts = () => {
     dispatch({type: DELETE_PRODUCT, payload: product})
@@ -40,7 +61,7 @@ const ProductsToList = (props) => {
     <>
       {
         itsCart ?
-          <div className={'product-to-list'}>
+          <div key={product.id} className={'product-to-list'}>
             <div className="row">
               <div className="col-2">
                 <div className={'img-product'}>
@@ -48,7 +69,11 @@ const ProductsToList = (props) => {
                     to={'/tool'}
                     onClick={event => handleGetTool()}
                   >
-                    <img className={'img'} src={product.thumbnail} alt=""/>
+                    {loadingImg?
+                      <Skeleton className={'img'} variant="rectangular"/>
+                      :
+                      <img className={'img'} src={img.src} alt=""/>
+                    }
                   </Link>
                 </div>
               </div>
@@ -97,7 +122,7 @@ const ProductsToList = (props) => {
             </div>
           </div>
           :
-          <div className={'product-to-list'}>
+          <div key={product.id} className={'product-to-list'}>
             <div className="row">
               <div className="col-2">
                 <div className={'img-product'}>
@@ -152,6 +177,6 @@ const ProductsToList = (props) => {
       }
     </>
   );
-};
+});
 
 export default ProductsToList;

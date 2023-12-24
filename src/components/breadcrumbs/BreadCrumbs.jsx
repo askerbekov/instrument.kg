@@ -5,7 +5,6 @@ const BreadCrumbs = () => {
 
 
   const breadCrumbs = useSelector(state => state.categoriesReducer)
-  console.log(breadCrumbs)
   return (
     <section className={'bread-crumbs'}>
       <div className="container">
