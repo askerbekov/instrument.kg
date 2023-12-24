@@ -3,9 +3,8 @@ import {useDispatch, useSelector} from "react-redux";
 import {getPromoProducts} from "../../redux/action/promorProductsAction";
 import SwiperPromo from "../swiper/SwiperPromo";
 import './actionProducts.scss'
-import {Skeleton} from "@mui/material";
 
-const PromoSections = ({loading}) => {
+const PromoSections = ({}) => {
   const dispatch = useDispatch()
   const promoProducts = useSelector(state => state.promoProductReducer.promoProducts)
 
@@ -17,7 +16,7 @@ const PromoSections = ({loading}) => {
   return (
     <section className={'action-products'}>
       <div className="container">
-        <SwiperPromo promoProducts={promoProducts} loading={loading}/>
+        <SwiperPromo promoProducts={promoProducts}/>
       </div>
     </section>
   );
