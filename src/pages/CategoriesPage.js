@@ -1,8 +1,7 @@
 import '../components/styles/categoriesPage.scss'
 import FilterBar from "../components/filterBar/FilterBar";
 import Layout from "../components/layout/Layout";
-import {useMatches, useParams} from "react-router-dom";
-import categories from "../components/categories/categories";
+import {useParams} from "react-router-dom";
 import Products from "../components/poducts/Products";
 import '../components/styles/categories-page.scss'
 import BreadCrumbs from "../components/breadcrumbs/BreadCrumbs";
