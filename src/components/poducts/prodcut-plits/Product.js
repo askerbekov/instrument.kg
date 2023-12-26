@@ -83,20 +83,34 @@ const Product = memo((props) => {
           to={'/tool'}
           onClick={event => handleGetTool(event)}
         >
-          {loadingImg ?
+          {product.id > 4 ?
             <>
-              <Skeleton className={'img'} variant="rectangular"/>
-              <img loading={"lazy"} ref={imgRef} alt={product.name}/>
+              {loadingImg ?
+                <>
+                  <Skeleton className={'img'} variant="rectangular"/>
+                  <img loading={"lazy"} ref={imgRef} alt={product.name}/>
+                </>
+                :
+                <img
+                  className={'img'}
+                  src={img}
+                  alt={product.name}
+                  loading="lazy"
+                  ref={imgRef}
+                />
+              }
             </>
             :
             <img
               className={'img'}
-              src={img}
+              src={product.thumbnail}
               alt={product.name}
               loading="lazy"
               ref={imgRef}
             />
+
           }
+
         </Link>
       </div>
       <Link

@@ -8,7 +8,6 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import './swiperPromo.scss';
-import {Skeleton} from "@mui/material";
 import PromoSlide from "./PromoSlide";
 
 
