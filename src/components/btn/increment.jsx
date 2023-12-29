@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './increment.scss'
 import {useDispatch} from "react-redux";
-import {QUANTITY_PRODUCT} from "../../redux/types/types";
+import { PRICE_QUANTITY_DECREMENT, PRICE_QUANTITY_PLUS, QUANTITY_PRODUCT} from "../../redux/types/types";
 
 const Increment = ({product}) => {
   const [res, setRes] = useState(1)
@@ -13,12 +13,18 @@ const Increment = ({product}) => {
 
   const handleQuantity = (event) => {
     setRes(Number(event))
+    dispatch({type:PRICE_QUANTITY_PLUS, payload: res * product.price})
   }
 
+  const increment = () => {
+    setRes(res+1)
+    dispatch({type:PRICE_QUANTITY_PLUS, payload: product.price})
+  }
 
   const decrement = () => {
     if (res > 1){
       setRes(res-1)
+      dispatch({type:PRICE_QUANTITY_DECREMENT, payload: product.price})
     }
   }
 
@@ -40,7 +46,10 @@ const Increment = ({product}) => {
         type="number"/>
       <button
         className={'btn-quantity c-black'}
-        onClick={event => setRes(res+1)}
+        onClick={event => {
+          increment()
+          // setRes(res + 1)
+        }}
       >
         +
       </button>

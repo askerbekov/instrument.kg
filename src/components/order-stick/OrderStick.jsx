@@ -1,12 +1,19 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './order-stick.scss'
 import ModalOrder from "../modal/ModalOrder";
+import {useDispatch, useSelector} from "react-redux";
+import {PRICE} from "../../redux/types/types";
 
 
 
 const OrderStick = ({carts}) => {
-
+  const dispatch = useDispatch()
+  const orderPrice= useSelector(state => state.cartReducer.price)
   const [open, setOpen] = useState(false)
+
+  useEffect(()=>{
+    dispatch({type:PRICE})
+  },[carts])
 
   const handleOpen = () => {
     setOpen(true)
@@ -35,9 +42,10 @@ const OrderStick = ({carts}) => {
           <div className="col-2 center">
             <div className="box">
               <h2 className={'txt-order'}>
-                {
-                  carts.reduce((acc, product) => acc + product.price ,0)
-                }
+                {/*{*/}
+                {/*  carts.reduce((acc, product) => acc + product.price ,0)*/}
+                {/*}*/}
+                {orderPrice}
                 сом
               </h2>
             </div>
