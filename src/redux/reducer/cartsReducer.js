@@ -1,9 +1,17 @@
-import {ADD_CARTS_PRODUCT, DELETE_PRODUCT, QUANTITY_PRODUCT} from "../types/types";
+import {
+  ADD_CARTS_PRODUCT,
+  DELETE_PRODUCT,
+  PRICE,
+  PRICE_QUANTITY_DECREMENT,
+  PRICE_QUANTITY_PLUS,
+  QUANTITY_PRODUCT
+} from "../types/types";
 
 
 const initialstate = {
   carts : [],
-  order : []
+  order : [],
+  price: 0,
 }
 
 export default function cartReducer (state = initialstate, action) {
@@ -19,6 +27,12 @@ export default function cartReducer (state = initialstate, action) {
         carts: state.carts.filter(el => el.id !== action.payload.id),
         order: state.order.filter(el => el.productId !== action.payload.id)
       }
+    case PRICE:
+      return {...state, price: state.carts.reduce((acc, product) => acc + product.price ,0) }
+    case PRICE_QUANTITY_PLUS:
+      return {...state, price: state.price + action.payload}
+    case PRICE_QUANTITY_DECREMENT:
+      return {...state, price: state.price - action.payload}
     case QUANTITY_PRODUCT:
       return {
         ...state,
