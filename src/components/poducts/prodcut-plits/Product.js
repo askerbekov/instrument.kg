@@ -119,7 +119,13 @@ const Product = memo((props) => {
       >
         <div className={'product-title'}>
           <p className={'product-articl'}>1234567</p>
-          <p className={'product-name'}>{product.title}</p>
+          <p className={'product-name product-name-height'}>
+            {product.title.length > 56 ?
+              product.title.slice(0,57) + '...'
+              :
+              product.title
+            }
+          </p>
           <p className={'price'}>{product.price} сом</p>
         </div>
       </Link>

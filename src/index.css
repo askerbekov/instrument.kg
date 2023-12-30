@@ -198,7 +198,10 @@ ul li {
     font-weight: 600;
     font-size: 18px;
     line-height: 157%;
-  }
+}
+.product-name-height {
+  height: 57px;
+}
 
 
 input::-webkit-outer-spin-button,
