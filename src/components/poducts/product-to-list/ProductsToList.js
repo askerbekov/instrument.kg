@@ -62,7 +62,7 @@ const ProductsToList = memo((props) => {
         itsCart ?
           <div key={product.id} className={'product-to-list'}>
             <div className="row">
-              <div className="col-2">
+              <div className="col-1">
                 <div className={'img-product'}>
                   <Link
                     to={'/tool'}
@@ -76,7 +76,7 @@ const ProductsToList = memo((props) => {
                   </Link>
                 </div>
               </div>
-              <div className="col-2 center">
+              <div className="col-1 center">
                 <div className="box">
                   <Link
                     to={'/tool'}
@@ -86,7 +86,7 @@ const ProductsToList = memo((props) => {
                   </Link>
                 </div>
               </div>
-              <div className="col-2 center">
+              <div className="col-5 center">
                 <div className="box">
                   <Link
                     to={'/tool'}
@@ -96,7 +96,7 @@ const ProductsToList = memo((props) => {
                   </Link>
                 </div>
               </div>
-              <div className="col-2 center">
+              <div className="col-1 center">
                 <div className="box">
                   <p className={'price'}>{product.price} сом</p>
                 </div>
