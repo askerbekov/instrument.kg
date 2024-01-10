@@ -30,7 +30,7 @@ const ProductsToList = memo((props) => {
   useEffect(() => {
     // setLoadingImg(true)
     if (product){
-      axios.get(`${product.thumbnail}`, { responseType: 'blob' })
+      axios.get(`${product?.thumbnail}`, { responseType: 'blob' })
         .then(response => {
           const url = URL.createObjectURL(response.data);
           const newImg = new Image();
@@ -71,7 +71,7 @@ const ProductsToList = memo((props) => {
                     {loadingImg?
                       <Skeleton className={'img'} variant="rectangular"/>
                       :
-                      <img className={'img'} src={img.src} alt=""/>
+                      <img className={'img'} src={img?.src} alt=""/>
                     }
                   </Link>
                 </div>
@@ -179,3 +179,4 @@ const ProductsToList = memo((props) => {
 });
 
 export default ProductsToList;
+
