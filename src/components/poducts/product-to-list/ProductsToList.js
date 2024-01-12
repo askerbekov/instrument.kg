@@ -16,8 +16,8 @@ const ProductsToList = memo((props) => {
   const dispatch = useDispatch()
   const [cartDelete, setCartDelete] = useState(false)
   const carts = useSelector(state => state.cartReducer.carts)
-  const [img, setImg] = useState();
-  const [loadingImg, setLoadingImg] = useState(true)
+  // const [img, setImg] = useState();
+  // const [loadingImg, setLoadingImg] = useState(true)
 
 
   useEffect(() => {
@@ -27,22 +27,22 @@ const ProductsToList = memo((props) => {
     }
   }, [carts, product]);
 
-  useEffect(() => {
-    // setLoadingImg(true)
-    if (product){
-      axios.get(product?.thumbnail, { responseType: 'blob' })
-        .then(response => {
-          const url = URL.createObjectURL(response.data);
-          const newImg = new Image();
-          newImg.src = url;
-          setImg(newImg);
-        })
-        .catch(error => {
-          console.error('Ошибка при загрузке изображения:', error);
-        })
-        .finally(() => setLoadingImg(false))
-    }
-  }, [product]);
+  // useEffect(() => {
+  //   setLoadingImg(true)
+  //   if (product){
+  //     axios.get(product?.thumbnail, { responseType: 'blob' })
+  //       .then(response => {
+  //         const url = URL.createObjectURL(response.data);
+  //         const newImg = new Image();
+  //         newImg.src = url;
+  //         setImg(newImg);
+  //       })
+  //       .catch(error => {
+  //         console.error('Ошибка при загрузке изображения:', error);
+  //       })
+  //       .finally(() => setLoadingImg(false))
+  //   }
+  // }, [product]);
 
   const deleteProductCarts = () => {
     dispatch({type: DELETE_PRODUCT, payload: product})
@@ -68,11 +68,19 @@ const ProductsToList = memo((props) => {
                     to={'/tool'}
                     onClick={event => handleGetTool()}
                   >
-                    {loadingImg?
-                      <Skeleton className={'img'} variant="rectangular"/>
-                      :
-                      <img className={'img'} src={img?.src} alt=""/>
-                    }
+                    {/*{loadingImg?*/}
+                    {/*  <Skeleton className={'img'} variant="rectangular"/>*/}
+                    {/*  :*/}
+                    {/*  <img className={'img'} src={img?.src} alt=""/>*/}
+                    {/*}*/}
+
+                    <img
+                      className={'img'}
+                      src={product.thumbnail}
+                      alt={product.name}
+                      loading="lazy"
+                      // ref={imgRef}
+                    />
                   </Link>
                 </div>
               </div>
