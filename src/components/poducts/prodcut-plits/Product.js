@@ -3,8 +3,8 @@ import './product.scss'
 import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {ADD_CARTS_PRODUCT, DELETE_PRODUCT, GET_TOOL} from "../../../redux/types/types";
-import {Skeleton} from "@mui/material";
 import axios from "axios";
+import {Skeleton} from "@mui/material";
 
 const Product = memo((props) => {
   const {
@@ -13,9 +13,9 @@ const Product = memo((props) => {
 
   const dispatch = useDispatch()
   const [cartDelete, setCartDelete] = useState(false)
-  const [img, setImg] = useState(new Image());
-  const [loadingImg, setLoadingImg] = useState(true)
-  const imgRef = useRef(null);
+  // const [img, setImg] = useState(new Image());
+  // const [loadingImg, setLoadingImg] = useState(true)
+  // const imgRef = useRef(null);
   const carts = useSelector(state => state.cartReducer.carts)
 
 
@@ -26,44 +26,47 @@ const Product = memo((props) => {
     }
   }, [carts, product]);
 
-  useEffect(() => {
-    const currentImgRef = imgRef.current;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting ) {
-            loadImg()
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
+  // useEffect(() => {
+  //   const currentImgRef = imgRef.current;
+  //   const observer = new IntersectionObserver(
+  //     (entries) => {
+  //       entries.forEach((entry) => {
+  //         if (entry.isIntersecting ) {
+  //           loadImg()
+  //           observer.unobserve(entry.target);
+  //         }
+  //       });
+  //     },
+  //     { threshold: 0.5 }
+  //   );
+  //
+  //   if (currentImgRef) {
+  //     observer.observe(currentImgRef);
+  //   }
+  //
+  //   return () => {
+  //     if (currentImgRef) {
+  //       observer.unobserve(currentImgRef);
+  //     }
+  //   };
+  // }, [ product]);
 
-    if (currentImgRef) {
-      observer.observe(currentImgRef);
-    }
 
-    return () => {
-      if (currentImgRef) {
-        observer.unobserve(currentImgRef);
-      }
-    };
-  }, [product]);
-
-
-  const loadImg = async () => {
-    setLoadingImg(true)
-    try {
-      const response = await axios.get(`${product.thumbnail}`, { responseType: 'blob' });
-      const urlImg = URL.createObjectURL(response.data);
-      setImg(urlImg);
-    } catch (error) {
-      console.error('Ошибка при загрузке изображения:', error);
-    } finally {
-      setLoadingImg(false);
-    }
-  };
+  // const loadImg = async () => {
+  //   setLoadingImg(true)
+  //   try {
+  //     const response = await axios.get(`${product.thumbnail}`, { responseType: 'blob' });
+  //     console.log(response)
+  //     const urlImg = URL.createObjectURL(response.data);
+  //     setImg(urlImg);
+  //   }
+  //   catch (error) {
+  //     console.error('Ошибка при загрузке изображения:', error);
+  //   }
+  //   finally {
+  //     setLoadingImg(false);
+  //   }
+  // };
 
   const deleteProductCarts = () => {
     dispatch({type: DELETE_PRODUCT, payload: product})
@@ -83,33 +86,33 @@ const Product = memo((props) => {
           to={'/tool'}
           onClick={event => handleGetTool(event)}
         >
-          {product.id > 4 ?
-            <>
-              {loadingImg ?
-                <>
-                  <Skeleton className={'img'} variant="rectangular"/>
-                  <img loading={"lazy"} ref={imgRef} alt={product.name}/>
-                </>
-                :
-                <img
-                  className={'img'}
-                  src={img}
-                  alt={product.name}
-                  loading="lazy"
-                  ref={imgRef}
-                />
-              }
-            </>
-            :
+          {/*{product.id > 4 ?*/}
+          {/*  <>*/}
+          {/*    {loadingImg ?*/}
+          {/*      <>*/}
+          {/*        <Skeleton className={'img'} variant="rectangular"/>*/}
+          {/*        <img loading={"lazy"} ref={imgRef} alt={product.name}/>*/}
+          {/*      </>*/}
+          {/*      :*/}
+          {/*      <img*/}
+          {/*        className={'img'}*/}
+          {/*        src={img}*/}
+          {/*        alt={product.name}*/}
+          {/*        loading="lazy"*/}
+          {/*        ref={imgRef}*/}
+          {/*      />*/}
+          {/*    }*/}
+          {/*  </>*/}
+          {/*  :*/}
             <img
               className={'img'}
               src={product.thumbnail}
               alt={product.name}
               loading="lazy"
-              ref={imgRef}
+              // ref={imgRef}
             />
 
-          }
+          {/*}*/}
 
         </Link>
       </div>
