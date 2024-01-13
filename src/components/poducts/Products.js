@@ -2,6 +2,7 @@ import React, {memo, useEffect, useState} from 'react';
 import axios from "axios";
 import {useSelector} from "react-redux";
 import ProductsToList from "./product-to-list/ProductsToList";
+import LineBlock from "../filterBar/LineBlock/LineBlock";
 
 const Products = memo(() => {
   const [category, setCategory] = useState()
@@ -17,6 +18,7 @@ const Products = memo(() => {
 
   return (
     <div className="viewTools">
+      <LineBlock/>
       {
         products?.map(product => {
           return(
