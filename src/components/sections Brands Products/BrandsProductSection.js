@@ -5,19 +5,9 @@ import {useSelector} from "react-redux";
 const BrandsProductSection = memo(() => {
   return (
     <section className={'brand-product-section'}>
-      <div className="container">
-        <SwiperBrands  />
-        <SwiperBrands />
-        <SwiperBrands />
-        <SwiperBrands />
-        <SwiperBrands />
-        <SwiperBrands />
-        <SwiperBrands />
-        <SwiperBrands />
-        <SwiperBrands />
-        <SwiperBrands />
-        <SwiperBrands />
-        <SwiperBrands />
+      <div className="container-modified">
+        <SwiperBrands  name={'Новинки'}/>
+        <SwiperBrands name={'Акции'}/>
         <SwiperBrands />
         <SwiperBrands />
         <SwiperBrands />

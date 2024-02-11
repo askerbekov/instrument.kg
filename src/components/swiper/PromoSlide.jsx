@@ -8,7 +8,7 @@ const PromoSlide = ({product}) => {
 
   useEffect(() => {
     setLoading(true)
-    axios.get('https://picsum.photos/1920/1440', { responseType: 'blob' })
+    axios.get('https://placehold.co/1920x1440', { responseType: 'blob' })
       .then(response => {
         const url = URL.createObjectURL(response.data);
         const newImg = new Image();
