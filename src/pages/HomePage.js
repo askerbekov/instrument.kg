@@ -5,6 +5,12 @@ import BrandsProductSection from "../components/sections Brands Products/BrandsP
 import {useDispatch} from "react-redux";
 import ChekBackEnd from "../components/ChekBackEnd";
 import {getProducts} from "../redux/action/getProductsAction";
+import AsideCatalog from "../components/header/AsideCatalog";
+import AsideBrands from "../components/aside/AsideBrands/AsideBrands";
+import Header from "../components/header/Header";
+import Subheader from "../components/header/Subheader";
+import Footer from "../components/footer/Footer";
+import AsideCategory from "../components/aside/AsideCategory/AsideCategory";
 
 const HomePage = () => {
   const dispatch = useDispatch()
@@ -14,11 +20,20 @@ const HomePage = () => {
     // dispatch({type:"CLEAR"})
   },[])
   return (
-    <Layout>
+    <>
+      {/*<Layout>*/}
       {/*<ChekBackEnd/>*/}
-      <PromoSections/>
-      <BrandsProductSection/>
-    </Layout>
+      <Header/>
+      <AsideCategory/>
+      <AsideBrands/>
+      <main>
+        <PromoSections/>
+        <BrandsProductSection/>
+      </main>
+      <Footer/>
+      {/*</Layout>*/}
+    </>
+
   );
 };
 

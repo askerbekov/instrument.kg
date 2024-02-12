@@ -17,34 +17,34 @@
           font-weight: 600;
           padding: 25px 0;
         }
-        & .elemCategory:hover {
-          color: red;
-        }
-        & .elemCategory:after {
-          display: block;
-          content: '';
-          margin-top: 5px;
-          width: 0;
-          height: 2px;
-          background-color: red;
-          transition: .3s;
-        }
-        & .elemCategory:hover:after{
-          width: 30%;
-        }
-
-        & .selected {
-          color: red;
-        }
-        & .selected:after {
-          display: block;
-          content: '';
-          margin-top: 5px;
-          width: 30%;
-          height: 2px;
-          background-color: red;
-          transition: .3s;
-        }
+        //& .elemCategory:hover {
+        //  color: red;
+        //}
+        //& .elemCategory:after {
+        //  display: block;
+        //  content: '';
+        //  margin-top: 5px;
+        //  width: 0;
+        //  height: 2px;
+        //  background-color: red;
+        //  transition: .3s;
+        //}
+        //& .elemCategory:hover:after{
+        //  width: 30%;
+        //}
+        //
+        //& .selected {
+        //  color: red;
+        //}
+        //& .selected:after {
+        //  display: block;
+        //  content: '';
+        //  margin-top: 5px;
+        //  width: 30%;
+        //  height: 2px;
+        //  background-color: red;
+        //  transition: .3s;
+        //}
       }
     }
     & .right-box {
