@@ -6,6 +6,7 @@ import Products from "../components/poducts/Products";
 import '../components/styles/categories-page.scss'
 import BreadCrumbs from "../components/breadcrumbs/BreadCrumbs";
 import {memo} from "react";
+import AsideBrands from "../components/aside/AsideBrands/AsideBrands";
 const CategoriesPage = memo(() => {
     const idCategory = useParams()
 
@@ -14,9 +15,12 @@ const CategoriesPage = memo(() => {
     <Layout>
         <BreadCrumbs/>
         <section className={'section-products'}>
-            <div className="container product-tools">
+            <div className=" product-tools">
                 <FilterBar/>
-                <Products/>
+               <main>
+                   <Products/>
+               </main>
+                <AsideBrands/>
             </div>
         </section>
     </Layout>

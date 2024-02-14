@@ -11,7 +11,6 @@ const FilterBar = () => {
             <h3>Наборы инструмента бытового</h3>
            <DropDown/>
 
-            <BrendsDown/>
             <LengthRange min={0} max={250}/>
         </aside>
     );
