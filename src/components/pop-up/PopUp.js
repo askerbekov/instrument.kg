@@ -11,6 +11,7 @@ const PopUp = () => {
     dispatch({type:POPUP_OFF})
   }
 
+  console.log(product)
   useEffect(() => {
     setTimeout(popupOff,3000)
   },[popup])
