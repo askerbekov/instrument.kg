@@ -6,9 +6,9 @@ import 'swiper/css/scrollbar';
 import 'swiper/css/free-mode';
 import './swiperBrands.scss'
 import {Link} from "react-router-dom";
-import Product from "../poducts/prodcut-plits/Product";
 import {useSelector} from "react-redux";
 import SkeletonProduct from "../poducts/prodcut-plits/SkeletonProduct";
+import ProductNew from "../poducts/prodcut-plits/ProductNew";
 
 // const product = {
 //   name: 'Пильный диск по дереву, 125 х 22 мм, 36 зубьев Sparta',
@@ -31,9 +31,10 @@ const SwiperBrands = memo(({name}) => {
         </Link>
       </h2>
       <Swiper
-        slidesPerView={4}
+        slidesPerView={5}
         spaceBetween={0}
-        navigation={true}
+        navigation={{hiddenClass: false}}
+
         mousewheel={{forceToAxis: true}}
         // direction={'horizontal'}
         freeMode={true}
@@ -54,7 +55,7 @@ const SwiperBrands = memo(({name}) => {
           products?.map(product => {
             return(
               <SwiperSlide key={product.id}>
-                <Product product={{...product}}/>
+                <ProductNew product={{...product}}/>
               </SwiperSlide>
             )
           })

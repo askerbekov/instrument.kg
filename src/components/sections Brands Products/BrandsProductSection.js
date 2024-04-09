@@ -5,15 +5,11 @@ import {useSelector} from "react-redux";
 const BrandsProductSection = memo(() => {
   return (
     <section className={'brand-product-section'}>
-      <div className="container-modified">
+      <div className="container">
         <SwiperBrands  name={'Новинки'}/>
         <SwiperBrands name={'Акции'}/>
-        <SwiperBrands />
-        <SwiperBrands />
-        <SwiperBrands />
-        <SwiperBrands />
-        <SwiperBrands />
-        <SwiperBrands />
+        <SwiperBrands name={'Хит товары'}/>
+        {/*<SwiperBrands />*/}
       </div>
     </section>
   );

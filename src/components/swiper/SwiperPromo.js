@@ -39,7 +39,7 @@ const SwiperPromo = memo(({promoProducts}) => {
             return (
               <SwiperSlide
                 key={product.id}
-                className={''}
+                className={'promo-slide'}
               >
                 <PromoSlide product={product}/>
               </SwiperSlide>

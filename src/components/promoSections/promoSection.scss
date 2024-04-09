@@ -1,0 +1,29 @@
+.promo-section {
+  padding: 20px 0;
+  min-height: 500px;
+
+  & .promo-block {
+    display: flex;
+    gap: 20px;
+  }
+
+  & .swiper-promo {
+    max-width: 70%;
+    border-radius: 5px;
+    border: 1px solid #F7F8FB;
+  }
+
+  & .swiper-bestseller {
+    width: 100%;
+    border: 1px solid #F3F5F6;
+    border-radius: 5px;
+    text-align: center;
+  }
+}
+
+
+.skel {
+  width: 1220px;
+  height: 500px;
+  background-color: #8a98a7;
+}
