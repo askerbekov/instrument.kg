@@ -5,6 +5,8 @@ import Catalog from "../catalog/Catalog";
 import {Link} from "react-router-dom";
 import {scrollToHeader} from "../scrollFunction";
 import {useDispatch, useSelector} from "react-redux";
+import StickCategory from "../stick menu/stick-category/Stick-category";
+import StickBrands from "../stick menu/stick-brands/Stick-Brands";
 
 
 const Subheader = memo(() => {
@@ -55,6 +57,8 @@ const Subheader = memo(() => {
           </Link>
         </div>
       </div>
+      <StickCategory/>
+      <StickBrands/>
     </header>
   );
 });

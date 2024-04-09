@@ -3,8 +3,6 @@ import './product.scss'
 import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {ADD_CARTS_PRODUCT, DELETE_PRODUCT, GET_TOOL} from "../../../redux/types/types";
-import axios from "axios";
-import {Skeleton} from "@mui/material";
 
 const Product = memo((props) => {
   const {

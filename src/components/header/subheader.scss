@@ -49,7 +49,8 @@
           display: flex;
           align-items: center;
           border-radius: 5px;
-          border: 1px solid gray;
+          //border: 1px solid gray;
+          background-color: #969e9e1a;
           padding: 5px;
           min-height: 34px;
           & .search-input {

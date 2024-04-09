@@ -1,6 +1,6 @@
 import {
   ADD_CARTS_PRODUCT,
-  DELETE_PRODUCT,
+  DELETE_PRODUCT, POPUP, POPUP_OFF,
   PRICE,
   PRICE_QUANTITY_DECREMENT,
   PRICE_QUANTITY_PLUS,
@@ -12,10 +12,18 @@ const initialstate = {
   carts : [],
   order : [],
   price: 0,
+  popup: {
+    isTrue : false,
+    porduct: {},
+  }
 }
 
 export default function cartReducer (state = initialstate, action) {
   switch (action.type){
+    case POPUP:
+      return {...state, popup: {isTrue: true, product: action.payload}}
+    case POPUP_OFF:
+      return {...state, popup: {isTrue: false, product: {}} }
     case ADD_CARTS_PRODUCT:
       return {...state,
         carts: [...state.carts, action.payload],

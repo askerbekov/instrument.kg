@@ -7,6 +7,7 @@ const Increment = ({product}) => {
   const [res, setRes] = useState(1)
   const dispatch = useDispatch()
 
+
   useEffect(()=>{
     dispatch({type: QUANTITY_PRODUCT, payload:{id:product.id, quantity:res}})
   },[res])
