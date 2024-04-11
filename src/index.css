@@ -269,3 +269,35 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
+
+
+/*================ my Swiper ====================*/
+.swiper-button-prev, .swiper-button-next{
+  opacity: 0.3;
+  transition: .3s ease-in-out;
+  background: #f7f8fb;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin: 0 10px;
+}
+.mySwiper:hover .swiper-button-prev{
+  opacity: 1;
+}
+.mySwiper:hover .swiper-button-next{
+  opacity: 1;
+}
+.swiper-button-disabled {
+  opacity: 0!important;
+}
+.swiper-button-prev:hover, .swiper-button-next:hover {
+  background: #DEE2E6;
+}
+.swiper-button-prev::after, .swiper-button-next::after {
+  font-size: 12px!important;
+  font-weight: 600;
+  color: black;
+}
+
+
+
+
