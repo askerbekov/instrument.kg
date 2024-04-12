@@ -48,18 +48,17 @@ const ProductNew = memo(({product}) => {
               // ref={imgRef}
             />
           </Link>
-
         </div>
         <div className={'addit-action'}>
-          <div className={'quick-view'}>
-
-          </div>
-          <div className={'quick-order'}>
-
-          </div>
-          <div className={'wish-list'}>
-
-          </div>
+          <button title={'Быстрый просмотр'} className={'btn-product-action quick-view'}>
+            <i className={'icon quick-view-icon'}></i>
+          </button>
+          <button title={'Быстрый заказ'} className={'btn-product-action quick-order'}>
+            <i className={'icon quick-order-icon'}></i>
+          </button>
+          <button title={'Добавить в избранное'} className={'btn-product-action wish-list'}>
+            <i className={'icon wishlist-icon'}></i>
+          </button>
         </div>
       </div>
       <div className={'tool-info'}>

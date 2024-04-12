@@ -24,7 +24,7 @@ const PromoSections = ({}) => {
             <SwiperPromo promoProducts={promoProducts}/>
           </div>
           <div className={'swiper-bestseller'}>
-            <h2>Товар дня</h2>
+            <h2>Товары дня</h2>
             <SwiperBestseller/>
           </div>
         </div>

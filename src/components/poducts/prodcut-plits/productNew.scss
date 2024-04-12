@@ -17,6 +17,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+    position: relative;
   }
 
   & .img-tool {
@@ -93,4 +95,29 @@
   & .cart-icon {
     background: #fff;
   }
+}
+
+.addit-action {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: absolute;
+  right: -40px;
+  transition: .2s ease-in-out;
+  & .btn-product-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background: #F7F8FB;
+    border-radius: 8px;
+    transition: .2s ease-in-out;
+  }
+  & .btn-product-action:hover {
+    background: #505966;
+  }
+}
+.new-product:hover .addit-action{
+  right: 0px;
 }

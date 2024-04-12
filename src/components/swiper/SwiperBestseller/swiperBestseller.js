@@ -1,6 +1,6 @@
 import React from 'react';
 import {Swiper, SwiperSlide} from "swiper/react";
-import {Autoplay} from "swiper/modules";
+import {Autoplay, Pagination} from "swiper/modules";
 import hilti from '../../assets/hilti.jpg'
 import './style.scss'
 
@@ -11,10 +11,12 @@ const SwiperBestseller = () => {
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
-          delay: 2500,
+          delay: 3000,
           disableOnInteraction: false,
         }}
-        modules={[Autoplay]}
+        pagination={{clickable:true}}
+        loop={true}
+        modules={[Autoplay, Pagination]}
         className="mySwiper"
       >
         <SwiperSlide><img src={hilti} alt=""/></SwiperSlide>

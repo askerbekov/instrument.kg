@@ -34,7 +34,6 @@ const SwiperBrands = memo(({name}) => {
         slidesPerView={5}
         spaceBetween={0}
         navigation={{hiddenClass: false}}
-
         mousewheel={{forceToAxis: true}}
         // direction={'horizontal'}
         freeMode={true}
