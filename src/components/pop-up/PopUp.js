@@ -4,9 +4,10 @@ import {POPUP_OFF} from "../../redux/types/types";
 import './popup.scss'
 
 const PopUp = () => {
-  const popup = useSelector(state => state.cartReducer.popup.isTrue)
+  const popup = useSelector(state => state.cartReducer.popup.isTrue) || false
   const product = useSelector(state => state.cartReducer.popup.product)
   const dispatch = useDispatch()
+  console.log(popup)
   const popupOff = () => {
     dispatch({type:POPUP_OFF})
   }
