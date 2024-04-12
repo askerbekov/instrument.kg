@@ -4,15 +4,14 @@ import {POPUP_OFF} from "../../redux/types/types";
 import './popup.scss'
 
 const PopUp = () => {
-  const popup = useSelector(state => state.cartReducer.popup.isTrue) || false
-  const product = useSelector(state => state.cartReducer.popup.product)
+  const popup = useSelector(state => state.cartReducer?.popup)
+  const product = useSelector(state => state.cartReducer?.popup.product)
   const dispatch = useDispatch()
   console.log(popup)
   const popupOff = () => {
     dispatch({type:POPUP_OFF})
   }
 
-  console.log(product)
   useEffect(() => {
     setTimeout(popupOff,3000)
   },[popup])
