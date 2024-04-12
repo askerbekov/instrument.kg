@@ -11,12 +11,25 @@
 }
 
 .brand {
-  //background-color: #7f868d30;
   padding: 5px 10px;
-  border-radius: 5px;
+  font-weight: 400;
 }
 
 .brand:hover {
   cursor: pointer;
-  box-shadow: 1px 7px 19px 5px rgba(161,161,161,0.53);
+  //font-weight: 600;
+  //box-shadow: 1px 7px 19px 5px rgba(161,161,161,0.53);
+}
+
+.brand::after {
+  display: block;
+  content: '';
+  width: 0;
+  height: 2px;
+  background: red;
+  transition: .3s ease-in-out;
+}
+
+.brand:hover.brand::after{
+  width: 100%;
 }

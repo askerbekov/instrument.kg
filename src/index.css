@@ -131,17 +131,45 @@ ul li {
   background-image: url("./components/assets/search.svg");
 }
 
-.carts-icon {
-  width: 30px;
-  height: 30px;
-  background-image: url("./components/assets/cart1.svg");
-}
+/*.carts-icon {*/
+/*  width: 30px;*/
+/*  height: 30px;*/
+/*  background-image: url("./components/assets/cart1.svg");*/
+/*}*/
 .cart-icon {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   -webkit-mask-image: url("./components/assets/cart/cart.svg");
   mask-image: url("./components/assets/cart/cart.svg");
   background: black;
+}
+.account-icon {
+  width: 20px;
+  height: 20px;
+  -webkit-mask-image: url("./components/assets/cart/account.svg");
+  mask-image: url("./components/assets/cart/account.svg");
+  background: black;
+}
+.quick-view-icon {
+  width: 20px;
+  height: 20px;
+  /*-webkit-mask-image: url("./components/assets/product/quick-view.svg");*/
+  background-image: url("./components/assets/product/quick-view.svg");
+  /*background: black;*/
+}
+.quick-order-icon {
+  width: 20px;
+  height: 20px;
+  /*-webkit-mask-image: url("./components/assets/product/quick-order.svg");*/
+  background-image: url("./components/assets/product/quick-order.svg");
+  /*background: black;*/
+}
+.wishlist-icon {
+  width: 20px;
+  height: 20px;
+  /*-webkit-mask-image: url("./components/assets/product/wishlist.svg");*/
+  background-image: url("./components/assets/product/wishlist.svg");
+  /*background: black;*/
 }
 
 
@@ -269,3 +297,44 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
+
+
+/*================ my Swiper ====================*/
+.swiper-button-prev, .swiper-button-next{
+  opacity: 0.3;
+  transition: .3s ease-in-out;
+  background: #f7f8fb;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin: 0 10px;
+}
+.mySwiper:hover .swiper-button-prev{
+  opacity: 1;
+}
+.mySwiper:hover .swiper-button-next{
+  opacity: 1;
+}
+.swiper-button-disabled {
+  opacity: 0!important;
+}
+.swiper-button-prev:hover, .swiper-button-next:hover {
+  background: #DEE2E6;
+}
+.swiper-button-prev::after, .swiper-button-next::after {
+  font-size: 12px!important;
+  font-weight: 600;
+  color: black;
+}
+
+.swiper-pagination-bullet {
+  width: 25px!important;
+  height: 3px!important;
+  border-radius: 0!important;
+}
+.swiper-pagination-bullet-active {
+  background: black!important;
+}
+
+
+
+

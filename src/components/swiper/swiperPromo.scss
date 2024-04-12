@@ -3,9 +3,15 @@
 .promo-Swiper {
   //width: 70%;
   .swiper-slide {
-    height: 500px;
+    height: 100%;
     position: relative;
     overflow: hidden;
+  }
+  & .swiper-wrapper {
+    height: 400px;
+  }
+  & .promo-slide {
+    height: 100%;
   }
 
   .img-promo {

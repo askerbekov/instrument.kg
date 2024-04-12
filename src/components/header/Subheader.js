@@ -51,9 +51,13 @@ const Subheader = memo(() => {
             </div>
             <Search/>
           </div>
-          <Link to={'/carts'} className={'carts'}>
-            Корзинка
-            <i className={'icon carts-icon'}></i>
+          <Link to={'/carts'} className={'carts-full button-header'}>
+            <p className={'text-button'}>корзина</p>
+            <i className={'icon cart-icon'}></i>
+          </Link>
+          <Link to={'/'} className={'account button-header'}>
+            <p className={'text-button'}>кабинет</p>
+            <i className={'icon account-icon'}></i>
           </Link>
         </div>
       </div>

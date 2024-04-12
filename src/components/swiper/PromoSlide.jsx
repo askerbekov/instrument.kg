@@ -23,7 +23,7 @@ const PromoSlide = ({product}) => {
 
 
   return (
-    <div key={product.id}>
+    <div className={'promo-slide'} key={product.id}>
       {loading ?
         <Skeleton variant="rectangular" width={1250} height={500} />
         :

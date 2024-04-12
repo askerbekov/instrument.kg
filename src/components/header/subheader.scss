@@ -65,18 +65,22 @@
       }
     }
 
-    & .carts {
+    & .button-header {
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-size: 18px;
-      font-weight: 500;
+      flex-direction: column-reverse;
       transition: .3s;
+      gap: 4px;
     }
 
-    & .carts:hover {
+    & .button-header:hover {
       color: red;
     }
+    & .text-button {
+      font-size: 12px;
+      font-weight: 500;
+    }
+
   }
 }
 
