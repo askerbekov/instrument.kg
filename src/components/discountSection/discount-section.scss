@@ -1,0 +1,19 @@
+.discount-section-box {
+  overflow: hidden;
+  display: flex;
+  padding: 20px 0 0;
+  & .discount-text {
+    padding: 0 39px;
+    max-width: 202.2px;
+    max-height: 342px;
+    font-size: 32px;
+    font-weight: 600;
+    color: #FFFFFF;
+    background-color: #DC0000;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+}

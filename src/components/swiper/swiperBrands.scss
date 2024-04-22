@@ -1,10 +1,48 @@
 .swiper-wrapper {
-  //padding: 20px;
+  padding: 1px;
   & .swiper-slide {
     padding: 0 10px;
   }
 }
 
 .miniSwiper {
-  padding: 20px 0;
+  //padding: 20px 0;
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 10px 0 50px;
+
+  & .title-brands {
+    padding-right: 90px;
+  }
+}
+
+.swiper-box {
+  & .title-brands {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.horizontal-line {
+  display: block;
+  height: 2px;
+  flex: 1;
+  background-color: #EDEDED;
+}
+
+.swiper-button-prev,.swiper-button-next {
+  width: 28px;
+  height: 28px;
+  top: 40px;
+}
+.swiper-button-prev {
+  left: unset;
+  right: 32px;
+}
+.swiper-button-next {
+  right: 0;
+}
+
+.swiper-button-next:hover::after, .swiper-button-prev:hover::after {
+  color: #FFFFFF;
 }

@@ -1,0 +1,38 @@
+.header-top {
+  background-color: #DC0000;
+  .header-top-box {
+    color: #FFFFFF;
+    font-size: 1rem;
+    padding: 14px 0;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+  & .header-top-ul {
+    display: flex;
+    gap: 15px;
+    & .show-cities {
+      padding-right: 20px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    & .header-top-ul_li :hover{
+      font-weight: 600;
+    }
+  }
+  & .contact-phone {
+    font-size: 1.2rem;
+    display: flex;
+    gap: 20px;
+    .line {
+      display: inline-block;
+      width: 1px;
+      background-color: #6e6c6c;
+    }
+    & a {
+      display: flex;
+      align-items: center;
+    }
+  }
+}

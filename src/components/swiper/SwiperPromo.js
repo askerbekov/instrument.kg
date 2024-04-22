@@ -17,21 +17,21 @@ const SwiperPromo = memo(({promoProducts}) => {
   return (
     <>
       <Swiper
-        cssMode={true}
-        navigation={true}
-        keyboard={true}
+        // cssMode={true}
+        // navigation={true}
+        // keyboard={true}
         autoplay={{
-          delay: 40500,
+          delay: 4500,
           disableOnInteraction: false,
         }}
         pagination={{
           clickable: true,
         }}
-        speed={200}
-        mousewheel={{forceToAxis: true}}
+        speed={600}
+        // mousewheel={{forceToAxis: true}}
         loop={true}
         initialSlide={promoProducts.length - 1}
-        modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
+        modules={[Pagination,  Autoplay]} //Mousewheel, Keyboard,Navigation
         className="mySwiper promo-Swiper"
       >
         {

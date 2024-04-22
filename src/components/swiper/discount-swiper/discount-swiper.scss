@@ -1,0 +1,15 @@
+.swiper-box {
+    width: 100%;
+}
+.discount-swiper {
+    width: 85%;
+    margin: 0;
+    padding-top: 0;
+
+    & .swiper-button-prev, .swiper-button-next {
+        top: 50%;
+    }
+    .swiper-button-prev {
+        left: 0;
+    }
+}
