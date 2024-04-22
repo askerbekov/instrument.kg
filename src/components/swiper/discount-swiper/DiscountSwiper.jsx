@@ -4,21 +4,20 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
 import 'swiper/css/free-mode';
-import './swiperBrands.scss'
-import {Link} from "react-router-dom";
+import './discount-swiper.scss'
 import {useSelector} from "react-redux";
-import SkeletonProduct from "../poducts/prodcut-plits/SkeletonProduct";
-import ProductTitool from "../poducts/prodcut-plits/product-tool/ProductTitool";
-import toolImg from "../assets/tool/tool.jpg"
-import toolImg2 from "../assets/tool/tool2.jpg"
-import toolImg3 from "../assets/tool/tool3.jpg"
-import toolImg4 from "../assets/tool/tool4.jpg"
-import toolImg5 from "../assets/tool/tool5.jpeg"
-import toolImg6 from "../assets/tool/tool6.jpg"
-import toolImg7 from "../assets/tool/tool7.jpg"
-import toolImg8 from "../assets/tool/tool8.jpg"
-import toolImg9 from "../assets/tool/tool9.jpg"
-import toolImg10 from "../assets/tool/tool10.jpg"
+import SkeletonProduct from "../../poducts/prodcut-plits/SkeletonProduct";
+import ProductTitool from "../../poducts/prodcut-plits/product-tool/ProductTitool";
+import toolImg from "../../assets/tool/tool.jpg"
+import toolImg2 from "../../assets/tool/tool2.jpg"
+import toolImg3 from "../../assets/tool/tool3.jpg"
+import toolImg4 from "../../assets/tool/tool4.jpg"
+import toolImg5 from "../../assets/tool/tool5.jpeg"
+import toolImg6 from "../../assets/tool/tool6.jpg"
+import toolImg7 from "../../assets/tool/tool7.jpg"
+import toolImg8 from "../../assets/tool/tool8.jpg"
+import toolImg9 from "../../assets/tool/tool9.jpg"
+import toolImg10 from "../../assets/tool/tool10.jpg"
 
 const product_test = [
   {
@@ -112,23 +111,15 @@ const SwiperBrands = memo(({name}) => {
   return (
     <div className={'swiper-box'}>
       <Swiper
-        slidesPerView={6}
+        slidesPerView={5}
         spaceBetween={0}
         navigation={{hiddenClass: false}}
-        // mousewheel={{forceToAxis: true}}
-        // direction={'horizontal'}
         freeMode={true}
         speed={300}
         // scrollbar={true}
         modules={[Navigation, Mousewheel, Scrollbar, FreeMode]}
-        className="mySwiper miniSwiper"
+        className="mySwiper miniSwiper discount-swiper"
       >
-        <h2 className={'title-brands'}>
-          <Link to={''} className={'section-title'}>
-            {name || 'makita'}
-          </Link>
-          <div className={'horizontal-line'}></div>
-        </h2>
         {loading?
           skeletonProduct.map(skeletonProduct => {
             return(

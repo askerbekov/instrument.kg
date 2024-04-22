@@ -62,7 +62,7 @@ const OrderStick = ({carts}) => {
           <div className="col-2 center">
             <div className="box">
               <button
-                className={carts.length === 0 ? 'disabled-btn' : 'add-cart-btn'}
+                className={carts.length === 0 ? 'disabled-btn' : 'add-cart_btn'}
                 onClick={handleOpen}
                 disabled={carts.length === 0}
               >
@@ -74,7 +74,7 @@ const OrderStick = ({carts}) => {
             <div className="box">
               <a
                 href={`https://wa.me/+79639991992?text=${encoded}`}
-                className={'whatsapp-btn add-cart-btn'}
+                className={'whatsapp-btn add-cart_btn'}
                 // onClick={handleOpen}
                 disabled={carts.length === 0}
               >

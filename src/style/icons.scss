@@ -1,0 +1,90 @@
+.icon {
+  display: inline-block;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.burger-icon {
+  width: 18px;
+  height: 2px;
+  background-color: white;
+}
+
+.close-icon {
+  width: 18px;
+  height: 18px;
+  background-image: url("../components/assets/close.svg");
+}
+
+.search-icon {
+  width: 18px;
+  height: 18px;
+  background-image: url("../components/assets/search.svg");
+}
+
+/*.carts-icon {*/
+/*  width: 30px;*/
+/*  height: 30px;*/
+/*  background-image: url("./components/assets/cart1.svg");*/
+/*}*/
+.cart-icon {
+  width: 20px;
+  height: 20px;
+  -webkit-mask-image: url("../components/assets/cart/cart.svg");
+  mask-image: url("../components/assets/cart/cart.svg");
+  background: black;
+}
+.account-icon {
+  width: 20px;
+  height: 20px;
+  -webkit-mask-image: url("../components/assets/cart/account.svg");
+  mask-image: url("../components/assets/cart/account.svg");
+  background: black;
+}
+.quick-view-icon {
+  width: 20px;
+  height: 20px;
+  /*-webkit-mask-image: url("./components/assets/product/quick-view.svg");*/
+  background-image: url("../components/assets/product/quick-view.svg");
+  /*background: black;*/
+}
+.quick-order-icon {
+  width: 20px;
+  height: 20px;
+  /*-webkit-mask-image: url("./components/assets/product/quick-order.svg");*/
+  background-image: url("../components/assets/product/quick-order.svg");
+  /*background: black;*/
+}
+.wishlist-icon {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-image: url("../components/assets/product/favorite-icon.svg");
+  background-image: url("../components/assets/product/favorite-icon.svg");
+  //background: black;
+}
+
+
+.footer-icon {
+  width: 200px;
+  height: 40px;
+  background-image: url("../components/assets/mir-icon.svg");
+}
+
+.icon-chek {
+  width: 30px;
+  height: 30px;
+  border: 2px solid green;
+  border-radius: 50%;
+  background-image: url("../components/assets/chek-carts.svg");
+}
+.flagpole-icon {
+  width: 16px;
+  height: 16px;
+  background-image: url("../components/assets/flagpole.svg");
+}
+.phone-icon {
+  width: 20px;
+  height: 20px;
+  background-image: url("../components/assets/phone.svg");
+}

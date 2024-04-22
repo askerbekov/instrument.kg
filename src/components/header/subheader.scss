@@ -64,7 +64,10 @@
 
       }
     }
-
+    & .header-area-controls {
+      display: flex;
+      gap: 10px;
+    }
     & .button-header {
       display: flex;
       align-items: center;
@@ -72,7 +75,6 @@
       transition: .3s;
       gap: 4px;
     }
-
     & .button-header:hover {
       color: red;
     }

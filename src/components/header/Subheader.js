@@ -1,17 +1,12 @@
-import React, {memo, useEffect, useState} from 'react';
+import React, {memo, useState} from 'react';
 import './subheader.scss'
 import Search from "../search/Search";
 import Catalog from "../catalog/Catalog";
 import {Link} from "react-router-dom";
 import {scrollToHeader} from "../scrollFunction";
-import {useDispatch, useSelector} from "react-redux";
-import StickCategory from "../stick menu/stick-category/Stick-category";
-import StickBrands from "../stick menu/stick-brands/Stick-Brands";
-
 
 const Subheader = memo(() => {
   const [isOpenCatalog, setIsOpenCatalog] = useState(false)
-  const dispatch = useDispatch()
 
   const handleClickCatalog = () => {
     setIsOpenCatalog(!isOpenCatalog)
@@ -51,18 +46,25 @@ const Subheader = memo(() => {
             </div>
             <Search/>
           </div>
-          <Link to={'/carts'} className={'carts-full button-header'}>
-            <p className={'text-button'}>корзина</p>
-            <i className={'icon cart-icon'}></i>
-          </Link>
-          <Link to={'/'} className={'account button-header'}>
-            <p className={'text-button'}>кабинет</p>
-            <i className={'icon account-icon'}></i>
-          </Link>
+          <div className={'header-area-controls'}>
+            <Link to={'/'} className={'account button-header'}>
+              <p className={'text-button'}>Кабинет</p>
+              <i className={'icon account-icon'}></i>
+            </Link>
+            <Link to={'/'} className={'account button-header'}>
+              <p className={'text-button'}>Избранное</p>
+              <i className={'icon wishlist-icon'}></i>
+            </Link>
+            <Link to={'/carts'} className={'carts-full button-header'}>
+              <p className={'text-button'}>Корзина</p>
+              <i className={'icon cart-icon'}></i>
+            </Link>
+
+          </div>
         </div>
       </div>
-      <StickCategory/>
-      <StickBrands/>
+      {/*<StickCategory/>*/}
+      {/*<StickBrands/>*/}
     </header>
   );
 });

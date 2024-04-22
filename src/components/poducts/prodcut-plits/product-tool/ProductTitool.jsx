@@ -1,13 +1,14 @@
 import React, {memo, useEffect, useState} from 'react';
-import './productNew.scss'
+import './product-titool.scss'
 import {Link} from "react-router-dom";
-import {ADD_CARTS_PRODUCT, GET_TOOL, POPUP} from "../../../redux/types/types";
+import {ADD_CARTS_PRODUCT, DELETE_PRODUCT, GET_TOOL, POPUP} from "../../../../redux/types/types";
 import {useDispatch, useSelector} from "react-redux";
 
 const ProductNew = memo(({product}) => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const [inTheCart, setInTheCart] = useState(false)
   const carts = useSelector(state => state.cartReducer.carts)
+  const [cartDelete, setCartDelete] = useState(false)
 
 
   useEffect(() => {
@@ -17,6 +18,13 @@ const ProductNew = memo(({product}) => {
     }
   }, [carts, product]);
 
+  const deleteProductCarts = () => {
+    dispatch({type: DELETE_PRODUCT, payload: product})
+  }
+
+  // const addCarts = () => {
+  //   dispatch({type: ADD_CARTS_PRODUCT, payload: product})
+  // }
 
   const addCarts = () => {
     if (inTheCart){
@@ -33,7 +41,6 @@ const ProductNew = memo(({product}) => {
 
   return (
     <div className={'new-product'}>
-      <span className={'article-tool'}>Код: 12345</span>
       <div className={'image'}>
         <div className={'img-tool'}>
           <Link
@@ -49,24 +56,9 @@ const ProductNew = memo(({product}) => {
             />
           </Link>
         </div>
-        {/*<div className={'addit-action'}>*/}
-        {/*  <button title={'Быстрый просмотр'} className={'btn-product-action quick-view'}>*/}
-        {/*    <i className={'icon quick-view-icon'}></i>*/}
-        {/*  </button>*/}
-        {/*  <button title={'Быстрый заказ'} className={'btn-product-action quick-order'}>*/}
-        {/*    <i className={'icon quick-order-icon'}></i>*/}
-        {/*  </button>*/}
-        {/*  <button title={'Добавить в избранное'} className={'btn-product-action wish-list'}>*/}
-        {/*    <i className={'icon wishlist-icon'}></i>*/}
-        {/*  </button>*/}
-        {/*</div>*/}
       </div>
       <div className={'tool-info'}>
-        <div className={'availability'}>
-          ✓ В наличии
-        </div>
         <div className={'tool-name'}>
-          {/* Надо сделать линк по артиклу товара*/}
           <Link
             to={"/tool"}
             onClick={event => handleGetTool(event)}
@@ -75,19 +67,26 @@ const ProductNew = memo(({product}) => {
           </Link>
         </div>
         <div className={'tool-price'}>
-          <span className={'priceProduct'}>{product.price} сом</span>
-          <button
-            className={inTheCart ? 'carts greenCarts' : 'carts'}
-            onClick={event => addCarts(event)}
-
-            // className={cartDelete ? 'delete-product' : 'add-cart-btn'}
-            // onClick={event => {
-            //   cartDelete ? deleteProductCarts(event) : addCarts(event)
-            // }}
-          >
-            <i className={'icon cart-icon'}></i>
-          </button>
+          <span className={'price-old'}>{product.old_price ? product.old_price + ' сом' : false}</span>
+          <span className={'priceProduct'}>
+            {(product.price+'').replace(/\B(?=(?:\d{3})+(?!\d))/g, ' ')} сом
+          </span>
         </div>
+      </div>
+      <div className={'product-controls'}>
+        <button
+          className={cartDelete ? 'delete-product' : 'add-cart_btn'}
+          onClick={event => {
+            cartDelete ? deleteProductCarts(event) : addCarts(event)
+          }}
+        >
+          {
+            cartDelete ? 'Удалить с корзины' : 'B корзину'
+          }
+        </button>
+        <button className={'action-btn'}>
+          <i className={'icon wishlist-icon'}></i>
+        </button>
       </div>
     </div>
   );

@@ -7,8 +7,11 @@ const BrandsProductSection = memo(() => {
     <section className={'brand-product-section'}>
       <div className="container">
         <SwiperBrands  name={'Новинки'}/>
-        <SwiperBrands name={'Акции'}/>
-        <SwiperBrands name={'Хит товары'}/>
+        <SwiperBrands  name={'Отделочные инструменты'}/>
+        <SwiperBrands  name={'Автомобильные инструменты'}/>
+        <SwiperBrands  name={'Отделочные инструменты'}/>
+        <SwiperBrands name={'Измерительные инструменты'}/>
+        <SwiperBrands name={'Садовая инвентарь'}/>
         {/*<SwiperBrands />*/}
       </div>
     </section>

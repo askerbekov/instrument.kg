@@ -14,6 +14,8 @@ import AsideCategory from "../components/aside/AsideCategory/AsideCategory";
 import StickBrands from "../components/stick menu/stick-brands/Stick-Brands";
 import StickCategory from "../components/stick menu/stick-category/Stick-category";
 import PopUp from "../components/pop-up/PopUp";
+import Head from "../components/header/head/Head";
+import DiscountSection from "../components/discountSection/DiscountSection";
 
 const HomePage = () => {
   const dispatch = useDispatch()
@@ -26,7 +28,7 @@ const HomePage = () => {
     <>
       {/*<Layout>*/}
       {/*<ChekBackEnd/>*/}
-      <Header/>
+      <Head/>
       <PopUp/>
       {/*<StickBrands/>*/}
       {/*<StickCategory/>*/}
@@ -34,6 +36,7 @@ const HomePage = () => {
       {/*<AsideBrands/>*/}
       <main>
         <PromoSections/>
+        <DiscountSection/>
         <BrandsProductSection/>
       </main>
       <Footer/>
