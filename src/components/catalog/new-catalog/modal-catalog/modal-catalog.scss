@@ -1,0 +1,51 @@
+.custom-modal {
+  position: absolute;
+  top: 100%;
+  z-index: 10;
+  background-color: #FFFFFF;
+}
+
+.category-box{
+  padding-bottom: 40px;
+}
+
+.header-catalog-box {
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  & .category-name {
+    font-weight: 600;
+  }
+  & .category-img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+  }
+}
+
+.podcategory-box {
+  & .show-all {
+    position: absolute;
+    color: red;
+  }
+}
+
+.ul-podcategories {
+  position: relative;
+  overflow: hidden;
+  & .podcategory {
+    margin-bottom: 5px;
+    //transition: .1s ease-in-out;
+  }
+  & .podcategory:hover {
+    color: red;
+  }
+}
+
+.height-hidden {
+  height: 220px!important;
+}
+.height-unset {
+  height: unset!important;
+}
+

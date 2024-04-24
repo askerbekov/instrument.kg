@@ -1,22 +1,27 @@
 import React, {memo, useState} from 'react';
 import './subheader.scss'
 import Search from "../search/Search";
-import Catalog from "../catalog/Catalog";
 import {Link} from "react-router-dom";
 import {scrollToHeader} from "../scrollFunction";
+import ModalCatalogNew from "../catalog/new-catalog/modal-catalog/ModalCatalogNew";
 
 const Subheader = memo(() => {
   const [isOpenCatalog, setIsOpenCatalog] = useState(false)
 
   const handleClickCatalog = () => {
-    setIsOpenCatalog(!isOpenCatalog)
+    setIsOpenCatalog(prevState => !isOpenCatalog)
+  }
+  const handleClose = () => {
+    setIsOpenCatalog(false)
   }
 
 
   return (
     <header className={`${isOpenCatalog ? '' : 'header-stick'}`}>
       <div className="subheader">
-        <Catalog isOpenCatalog={isOpenCatalog} setOpenCatalog={setIsOpenCatalog}/>
+        {/*<Catalog isOpenCatalog={isOpenCatalog} setOpenCatalog={setIsOpenCatalog}/>*/}
+        <div className={`overlay ${isOpenCatalog ? 'd-block' : 'd-none'}`}></div>
+        <ModalCatalogNew open={isOpenCatalog} handleClose={handleClose}/>
         <div className="container subheader-wrap">
           <Link
             to={'/'}
@@ -29,7 +34,7 @@ const Subheader = memo(() => {
                 className={'catalog-btn'}
                 onClick={event => {
                   scrollToHeader()
-                  handleClickCatalog()
+                  isOpenCatalog ? handleClose() : handleClickCatalog()
                 }}
               >
                 {isOpenCatalog ?
