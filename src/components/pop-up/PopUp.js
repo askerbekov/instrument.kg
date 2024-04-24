@@ -7,7 +7,6 @@ const PopUp = () => {
   const popup = useSelector(state => state.cartReducer.popup?.isTrue)
   const product = useSelector(state => state.cartReducer.popup?.product)
   const dispatch = useDispatch()
-  console.log(popup)
   const popupOff = () => {
     dispatch({type:POPUP_OFF})
   }

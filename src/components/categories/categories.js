@@ -1,6 +1,17 @@
-const categories = {
-  category: [],
-}
+import catImg1 from '../assets/category/1.jpg'
+import catImg2 from '../assets/category/2.jpg'
+import catImg3 from '../assets/category/3.jpg'
+import catImg4 from '../assets/category/4.jpg'
+import catImg5 from '../assets/category/5.png'
+import catImg6 from '../assets/category/6.jpeg'
+import catImg7 from '../assets/category/7.jpg'
+import catImg8 from '../assets/category/8.jpg'
+import catImg9 from '../assets/category/9.jpg'
+import catImg10 from '../assets/category/10.jpg'
+
+const catImg = [catImg1,catImg2,catImg3,catImg4,catImg5,catImg6,catImg7,catImg8,catImg9,catImg10]
+
+const categories =[]
 const cat = ['Отделочный инструмент', 'Слесарный инструмент', 'Автомобильный инструмент', 'Столярный инструмент', 'Садовый инвентарь', 'Измерительный инструмент', 'Силовое оборудование', 'Крепежный инструмент', 'Режущий инструмент', 'Прочий инструмент']
 
 
@@ -20,7 +31,7 @@ const podcat = {
 
 
 for (let i = 0; i < cat.length; i++) {
-  categories.category = [...categories.category, {id: i, category: cat[i], podcategoriy: [...podcat[i]]}]
+  categories.push({id: i,img:catImg[i], category: cat[i], podcategoriy: [...podcat[i]]})
 }
 
 // console.log(categories.category[0])
