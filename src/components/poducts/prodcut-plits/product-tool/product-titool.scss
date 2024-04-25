@@ -18,6 +18,17 @@
     justify-content: center;
     overflow: hidden;
     position: relative;
+    & .action {
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 5px;
+      padding: 5px;
+      background-color: #DC0000;
+      color: #FFFFFF;
+      font-weight: 600;
+      font-size: 14px;
+    }
   }
 
   & .img-tool {

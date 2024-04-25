@@ -42,6 +42,11 @@ const ProductNew = memo(({product}) => {
   return (
     <div className={'new-product'}>
       <div className={'image'}>
+        {product.old_price &&
+          <span className={'action'}>
+            -{100 - Math.round(product.price * 100 / product.old_price)}%
+        </span>
+        }
         <div className={'img-tool'}>
           <Link
             to={"/tool"}

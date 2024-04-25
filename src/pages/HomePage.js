@@ -1,21 +1,13 @@
 import React, {useEffect} from 'react';
-import Layout from "../components/layout/Layout";
 import PromoSections from "../components/promo-sections/PromoSections";
 import BrandsProductSection from "../components/sections Brands Products/BrandsProductSection";
 import {useDispatch} from "react-redux";
-import ChekBackEnd from "../components/ChekBackEnd";
 import {getProducts} from "../redux/action/getProductsAction";
-import AsideCatalog from "../components/header/AsideCatalog";
-import AsideBrands from "../components/aside/AsideBrands/AsideBrands";
-import Header from "../components/header/Header";
-import Subheader from "../components/header/Subheader";
 import Footer from "../components/footer/Footer";
-import AsideCategory from "../components/aside/AsideCategory/AsideCategory";
-import StickBrands from "../components/stick menu/stick-brands/Stick-Brands";
-import StickCategory from "../components/stick menu/stick-category/Stick-category";
 import PopUp from "../components/pop-up/PopUp";
 import Head from "../components/header/head/Head";
 import DiscountSection from "../components/discountSection/DiscountSection";
+import CategorySection from "../components/catalog/category-section/CategorySection";
 
 const HomePage = () => {
   const dispatch = useDispatch()
@@ -38,6 +30,7 @@ const HomePage = () => {
         <PromoSections/>
         <DiscountSection/>
         <BrandsProductSection/>
+        <CategorySection/>
       </main>
       <Footer/>
       {/*</Layout>*/}
