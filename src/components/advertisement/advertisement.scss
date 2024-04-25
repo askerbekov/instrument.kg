@@ -2,10 +2,10 @@
   display: flex;
   flex-direction: column;
   font-size: 24px;
-  & .advertisement-top {
+  & .advertisement-top-box {
     background-color: #F0F0F0;
   }
-  & .advertisement-top, .advertisement-bottom {
+  & .advertisement-top-box, .advertisement-bottom-box {
     height: 50%;
     border-radius: 10px;
     display: flex;
