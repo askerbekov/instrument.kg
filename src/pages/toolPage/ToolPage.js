@@ -43,7 +43,7 @@ const ToolPage = () => {
                     tool slider
                   </div>
                   <div className={'tool-img'}>
-                    <img className={''} src={tool.images[0]} alt="фотография инструмента"/>
+                    <img className={''} src={tool.thumbnail} alt="фотография инструмента"/>
                   </div>
                 </div>
               </div>

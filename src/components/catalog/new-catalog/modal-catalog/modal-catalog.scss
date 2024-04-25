@@ -1,5 +1,6 @@
 .custom-modal {
   position: absolute;
+  margin: 0 15px;
   top: 100%;
   z-index: 10;
   background-color: #FFFFFF;
@@ -9,7 +10,7 @@
   padding-bottom: 40px;
 }
 
-.header-catalog-box {
+.header-catalog-box a {
   display: flex;
   align-items: center;
   padding-bottom: 10px;
@@ -21,6 +22,9 @@
     height: 100px;
     object-fit: contain;
   }
+}
+.header-catalog-box:hover .category-name{
+  color: #DC0000;
 }
 
 .podcategory-box {
@@ -34,7 +38,7 @@
   position: relative;
   overflow: hidden;
   & .podcategory {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     //transition: .1s ease-in-out;
   }
   & .podcategory:hover {
@@ -42,10 +46,10 @@
   }
 }
 
-.height-hidden {
-  height: 220px!important;
-}
-.height-unset {
-  height: unset!important;
-}
+//.height-hidden {
+//  height: 220px!important;
+//}
+//.height-unset {
+//  height: unset!important;
+//}
 

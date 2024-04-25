@@ -2,6 +2,7 @@ import React, {useEffect, useRef, useState} from 'react';
 import './modal-catalog.scss'
 import categories from "../../../categories/categories";
 import PodcategoryList from "./PodcategoryList";
+import {Link} from "react-router-dom";
 
 
 const style = {
@@ -18,17 +19,11 @@ const style = {
   p: 4,
 };
 const ModalCatalogNew = ({open, handleClose}) => {
-  const [height, setHeight] = useState(false)
-
   const modalEl = useRef(null)
-
-  const showAllBtn = () => {
-    setHeight(!height)
-  }
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (modalEl.current && !modalEl.current.contains(event.target)) {
+      if (modalEl.current && !modalEl.current.contains(event.target) && event.target.className !== 'catalog-btn') {
         handleClose();
       }
     };
@@ -54,13 +49,14 @@ const ModalCatalogNew = ({open, handleClose}) => {
                 <div className="col-3" key={el.id}>
                   <div className="category-box">
                     <div className="header-catalog-box">
-                      <img className={'category-img'} src={el.img} alt={el.category}/>
-                      <h4 className={'category-name'}>{el.category}</h4>
+                      <Link to={`/categories/${el.id}`}>
+                        <img className={'category-img'} src={el.img} alt={el.category}/>
+                        <h4 className={'category-name'}>{el.category}</h4>
+                      </Link>
                     </div>
                     <div className="podcategory-box">
                       <PodcategoryList el={el}/>
                     </div>
-
                   </div>
                 </div>
               )

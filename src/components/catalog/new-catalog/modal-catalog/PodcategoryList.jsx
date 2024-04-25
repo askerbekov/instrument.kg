@@ -1,4 +1,5 @@
 import React, {useRef, useState} from 'react';
+import {Link} from "react-router-dom";
 
 const PodcategoryList = ({el}) => {
   const [showAll, setShowAll] = useState(false)
@@ -7,15 +8,27 @@ const PodcategoryList = ({el}) => {
   }
   return (
     <>
-      <ul className={`ul-podcategories ${showAll? 'height-unset' :'height-hidden' }`}>
+      <ul className={`ul-podcategories`}>
         { el.podcategoriy.map((elemPodcat, i) => {
-          return(
-            <a href={'/'}>
-              <li key={i} className={'podcategory'}>
-                {elemPodcat}
-              </li>
-            </a>
-          )
+          if (!showAll && i < 8){
+            return(
+              <Link to={`/${el.category.replaceAll(' ', '_')}/${el.id}/${elemPodcat.replace(' ', '_')}/${i}`} key={i}>
+                <li className={'podcategory'}>
+                  {elemPodcat}
+                </li>
+              </Link>
+            )
+          }
+          if (showAll){
+            return(
+              <Link to={`/${el.category.replaceAll(' ', '_')}/${el.id}/${elemPodcat.replace(' ', '_')}/${i}`} key={i}>
+                <li className={'podcategory'}>
+                  {elemPodcat}
+                </li>
+              </Link>
+            )
+          }
+
         })
         }
       </ul>

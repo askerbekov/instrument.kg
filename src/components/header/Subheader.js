@@ -2,17 +2,16 @@ import React, {memo, useState} from 'react';
 import './subheader.scss'
 import Search from "../search/Search";
 import {Link} from "react-router-dom";
-import {scrollToHeader} from "../scrollFunction";
 import ModalCatalogNew from "../catalog/new-catalog/modal-catalog/ModalCatalogNew";
 
 const Subheader = memo(() => {
   const [isOpenCatalog, setIsOpenCatalog] = useState(false)
 
   const handleClickCatalog = () => {
-    setIsOpenCatalog(prevState => !isOpenCatalog)
+    setIsOpenCatalog(!isOpenCatalog)
   }
   const handleClose = () => {
-    setIsOpenCatalog(false)
+    setIsOpenCatalog(!isOpenCatalog)
   }
 
 
@@ -33,8 +32,8 @@ const Subheader = memo(() => {
               <button
                 className={'catalog-btn'}
                 onClick={event => {
-                  scrollToHeader()
-                  isOpenCatalog ? handleClose() : handleClickCatalog()
+                  handleClickCatalog()
+                  // scrollToHeader()
                 }}
               >
                 {isOpenCatalog ?
